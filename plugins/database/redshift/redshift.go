@@ -475,9 +475,9 @@ func (p *RedShift) RotateRootCredentials(ctx context.Context, statements []strin
 		return nil, errors.New("username and password are required to rotate")
 	}
 
-	rotateStatents := statements
-	if len(rotateStatents) == 0 {
-		rotateStatents = []string{defaultRotateRootCredentialsSQL}
+	rotateStatements := statements
+	if len(rotateStatements) == 0 {
+		rotateStatements = []string{defaultRotateRootCredentialsSQL}
 	}
 
 	db, err := p.getConnection(ctx)
@@ -498,7 +498,7 @@ func (p *RedShift) RotateRootCredentials(ctx context.Context, statements []strin
 		return nil, err
 	}
 
-	for _, stmt := range rotateStatents {
+	for _, stmt := range rotateStatements {
 		for _, query := range strutil.ParseArbitraryStringSlice(stmt, ";") {
 			query = strings.TrimSpace(query)
 			if len(query) == 0 {
