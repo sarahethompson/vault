@@ -19,6 +19,8 @@ import (
 
 var (
 	testPostgresImagePull sync.Once
+	dbUser                string = "postgres"
+	dbName                string = "testdb"
 )
 
 func preparePostgresTestContainer(t *testing.T) (cleanup func(), retURL string) {
@@ -31,16 +33,17 @@ func preparePostgresTestContainer(t *testing.T) (cleanup func(), retURL string) 
 		t.Fatalf("Failed to connect to docker: %s", err)
 	}
 
-	resource, err := pool.Run("postgres", "latest", []string{"POSTGRES_PASSWORD=secret", "POSTGRES_DB=database"})
+	resource, err := pool.Run("guildeducation/docker-amazon-redshift", "latest", []string{
+		"POSTGRES_DB=" + dbName})
 	if err != nil {
-		t.Fatalf("Could not start local PostgreSQL docker container: %s", err)
+		t.Fatalf("Could not start local redshift docker container: %s", err)
 	}
 
 	cleanup = func() {
 		docker.CleanupResource(t, pool, resource)
 	}
 
-	retURL = fmt.Sprintf("postgres://postgres:secret@localhost:%s/database?sslmode=disable", resource.GetPort("5432/tcp"))
+	retURL = fmt.Sprintf("postgres://%s@localhost:%s/%s?sslmode=disable", dbUser, resource.GetPort("5439/tcp"), dbName)
 
 	// exponential backoff-retry
 	if err = pool.Retry(func() error {
@@ -54,7 +57,7 @@ func preparePostgresTestContainer(t *testing.T) (cleanup func(), retURL string) 
 		return db.Ping()
 	}); err != nil {
 		cleanup()
-		t.Fatalf("Could not connect to PostgreSQL docker container: %s", err)
+		t.Fatalf("Could not connect to redshift docker container: %s", err)
 	}
 
 	return
