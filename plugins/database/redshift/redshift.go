@@ -431,7 +431,6 @@ END
 $$;`)
 
 		revocationStmts = append(revocationStmts, fmt.Sprintf(`call terminateloop('%s');`, username))
-		//revocationStmts = append(revocationStmts, `DROP PROCEDURE terminateloop(varchar);`)
 	}
 
 	fmt.Printf("%+v\n", revocationStmts)

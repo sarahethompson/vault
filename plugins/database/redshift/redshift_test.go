@@ -131,7 +131,7 @@ func TestPostgreSQL_CreateUser(t *testing.T) {
 
 	username, password, err := db.CreateUser(context.Background(), statements, usernameConfig, time.Now().Add(time.Minute))
 	if err != nil {
-		t.Fatalf("err: %s", err)
+		t.Fatalf("err: %s\nstatement: %+v", err, statements)
 	}
 
 	if err = testCredsExist(t, connURL, username, password); err != nil {
@@ -399,16 +399,14 @@ func testCredsExist(t testing.TB, connURL, username, password string) error {
 }
 
 const testPostgresRole = `
-CREATE ROLE "{{name}}" WITH
-  LOGIN
+CREATE USER "{{name}}" WITH
   PASSWORD '{{password}}'
   VALID UNTIL '{{expiration}}';
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "{{name}}";
 `
 
 const testPostgresReadOnlyRole = `
-CREATE ROLE "{{name}}" WITH
-  LOGIN
+CREATE USER "{{name}}" WITH
   PASSWORD '{{password}}'
   VALID UNTIL '{{expiration}}';
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO "{{name}}";
@@ -418,10 +416,10 @@ GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO "{{name}}";
 const testPostgresBlockStatementRole = `
 DO $$
 BEGIN
-   IF NOT EXISTS (SELECT * FROM pg_catalog.pg_roles WHERE rolname='foo-role') THEN
-      CREATE ROLE "foo-role";
+   IF NOT EXISTS (SELECT * FROM pg_catalog.pg_users WHERE rolname='foo-role') THEN
+      CREATE USER "foo-role";
       CREATE SCHEMA IF NOT EXISTS foo AUTHORIZATION "foo-role";
-      ALTER ROLE "foo-role" SET search_path = foo;
+      ALTER USER "foo-role" SET search_path = foo;
       GRANT TEMPORARY ON DATABASE "postgres" TO "foo-role";
       GRANT ALL PRIVILEGES ON SCHEMA foo TO "foo-role";
       GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA foo TO "foo-role";
@@ -431,9 +429,9 @@ BEGIN
 END
 $$
 
-CREATE ROLE "{{name}}" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';
+CREATE USER "{{name}}" WITH PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';
 GRANT "foo-role" TO "{{name}}";
-ALTER ROLE "{{name}}" SET search_path = foo;
+ALTER USER "{{name}}" SET search_path = foo;
 GRANT CONNECT ON DATABASE "postgres" TO "{{name}}";
 `
 
@@ -441,10 +439,10 @@ var testPostgresBlockStatementRoleSlice = []string{
 	`
 DO $$
 BEGIN
-   IF NOT EXISTS (SELECT * FROM pg_catalog.pg_roles WHERE rolname='foo-role') THEN
-      CREATE ROLE "foo-role";
+   IF NOT EXISTS (SELECT * FROM pg_catalog.pg_users WHERE rolname='foo-role') THEN
+      CREATE USER "foo-role";
       CREATE SCHEMA IF NOT EXISTS foo AUTHORIZATION "foo-role";
-      ALTER ROLE "foo-role" SET search_path = foo;
+      ALTER USER "foo-role" SET search_path = foo;
       GRANT TEMPORARY ON DATABASE "postgres" TO "foo-role";
       GRANT ALL PRIVILEGES ON SCHEMA foo TO "foo-role";
       GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA foo TO "foo-role";
@@ -454,35 +452,32 @@ BEGIN
 END
 $$
 `,
-	`CREATE ROLE "{{name}}" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';`,
+	`CREATE USER "{{name}}" WITH PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';`,
 	`GRANT "foo-role" TO "{{name}}";`,
-	`ALTER ROLE "{{name}}" SET search_path = foo;`,
+	`ALTER USER "{{name}}" SET search_path = foo;`,
 	`GRANT CONNECT ON DATABASE "postgres" TO "{{name}}";`,
 }
 
 const defaultPostgresRevocationSQL = `
 REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM "{{name}}";
-REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM "{{name}}";
 REVOKE USAGE ON SCHEMA public FROM "{{name}}";
 
-DROP ROLE IF EXISTS "{{name}}";
+DROP USER IF EXISTS "{{name}}";
 `
 
 const testPostgresStaticRole = `
-CREATE ROLE "{{name}}" WITH
-  LOGIN
+CREATE USER "{{name}}" WITH
   PASSWORD '{{password}}';
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "{{name}}";
 `
 
 const testRoleStaticCreate = `
-CREATE ROLE "{{name}}" WITH
-  LOGIN
+CREATE USER "{{name}}" WITH
   PASSWORD '{{password}}';
 `
 
 const testPostgresStaticRoleRotate = `
-ALTER ROLE "{{name}}" WITH PASSWORD '{{password}}';
+ALTER USER "{{name}}" WITH PASSWORD '{{password}}';
 `
 
 const testPostgresStaticRoleGrant = `
