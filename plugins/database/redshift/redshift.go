@@ -224,7 +224,7 @@ func (p *RedShift) CreateUser(ctx context.Context, statements dbplugin.Statement
 				"expiration": expirationStr,
 			}
 			if err := dbtxn.ExecuteTxQuery(ctx, tx, m, query); err != nil {
-				return "", "", err
+				return "", "", fmt.Errorf("%s:\n%s", err.Error(), query)
 			}
 		}
 	}
