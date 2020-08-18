@@ -797,7 +797,7 @@ github.com/ryanuber/columnize
 github.com/ryanuber/go-glob
 # github.com/samuel/go-zookeeper v0.0.0-20180130194729-c4fab1ac1bec
 github.com/samuel/go-zookeeper/zk
-# github.com/sarahethompson/actions-test v0.1.21
+# github.com/sarahethompson/actions-test v0.18.2
 github.com/sarahethompson/actions-test
 # github.com/sasha-s/go-deadlock v0.2.0
 github.com/sasha-s/go-deadlock
