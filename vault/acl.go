@@ -15,7 +15,7 @@ import (
 	"github.com/hashicorp/vault/sdk/helper/strutil"
 	"github.com/hashicorp/vault/sdk/logical"
 	"github.com/mitchellh/copystructure"
-	"github.com/hashicorp/vault-plugin-mock"
+	_ "github.com/hashicorp/vault-plugin-mock"
 )
 
 // ACL is used to wrap a set of policies to provide
