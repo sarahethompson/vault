@@ -7,7 +7,3 @@ It *may* be imported by the real Vault, so while it is functionally a NOOP, chan
 - Don't rename the package
 - Don't rename or remove the exported constant
 - Ensure it always compiles
-
-test
-test
-test
