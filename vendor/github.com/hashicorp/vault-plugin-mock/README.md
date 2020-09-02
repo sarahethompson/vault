@@ -9,3 +9,5 @@ It *may* be imported by the real Vault, so while it is functionally a NOOP, chan
 - Ensure it always compiles
 
 test
+test
+test
