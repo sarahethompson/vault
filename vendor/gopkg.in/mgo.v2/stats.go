@@ -86,10 +86,10 @@ func (stats *Stats) cluster(delta int) {
 	}
 }
 
-func (stats *Stats) conn(delta int, master bool) {
+func (stats *Stats) conn(delta int, main bool) {
 	if stats != nil {
 		statsMutex.Lock()
-		if master {
+		if main {
 			stats.MasterConns += delta
 		} else {
 			stats.SlaveConns += delta

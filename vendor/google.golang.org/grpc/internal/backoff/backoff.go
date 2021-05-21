@@ -39,11 +39,11 @@ type Strategy interface {
 
 // DefaultExponential is an exponential backoff implementation using the
 // default values for all the configurable knobs defined in
-// https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md.
+// https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md.
 var DefaultExponential = Exponential{Config: grpcbackoff.DefaultConfig}
 
 // Exponential implements exponential backoff algorithm as defined in
-// https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md.
+// https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md.
 type Exponential struct {
 	// Config contains all options to configure the backoff algorithm.
 	Config grpcbackoff.Config

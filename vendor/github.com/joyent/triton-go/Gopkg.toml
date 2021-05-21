@@ -1,7 +1,7 @@
 
 # Gopkg.toml example
 #
-# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
+# Refer to https://github.com/golang/dep/blob/main/docs/Gopkg.toml.md
 # for detailed Gopkg.toml documentation.
 #
 # required = ["github.com/user/thing/cmd/thing"]
@@ -22,23 +22,23 @@
 
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/abdullin/seq"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/sean-/seed"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/crypto"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/pkg/errors"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/olekukonko/tablewriter"
 
 [[constraint]]
@@ -47,22 +47,22 @@
 
 [[constraint]]
   name = "github.com/spf13/cobra"
-  branch = "master"
+  branch = "main"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/spf13/viper"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/mattn/go-isatty"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/sean-/conswriter"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/sean-/pager"
 
 [[constraint]]
@@ -71,4 +71,4 @@
 
 [[constraint]]
   name = "github.com/dustin/go-humanize"
-  branch = "master"
+  branch = "main"

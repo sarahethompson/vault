@@ -17,6 +17,6 @@
 **See**
 
 - [Uses of HttpRequestsTable](https://github.com/hashicorp/vault/search?l=Handlebars&q=HttpRequestsTable+OR+http-requests-table)
-- [HttpRequestsTable Source Code](https://github.com/hashicorp/vault/blob/master/ui/app/components/http-requests-table.js)
+- [HttpRequestsTable Source Code](https://github.com/hashicorp/vault/blob/main/ui/app/components/http-requests-table.js)
 
 ---

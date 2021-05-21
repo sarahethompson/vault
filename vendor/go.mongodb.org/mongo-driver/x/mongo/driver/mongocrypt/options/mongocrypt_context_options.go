@@ -28,7 +28,7 @@ func (dko *DataKeyOptions) SetKeyAltNames(names []string) *DataKeyOptions {
 	return dko
 }
 
-// SetMasterKey specifies the master key.
+// SetMasterKey specifies the main key.
 func (dko *DataKeyOptions) SetMasterKey(key bsoncore.Document) *DataKeyOptions {
 	dko.MasterKey = key
 	return dko

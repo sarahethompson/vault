@@ -17,7 +17,7 @@
  */
 
 // Package binarylog implementation binary logging as defined in
-// https://github.com/grpc/proposal/blob/master/A16-binary-logging.md.
+// https://github.com/grpc/proposal/blob/main/A16-binary-logging.md.
 package binarylog
 
 import (

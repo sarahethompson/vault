@@ -23,8 +23,8 @@ func DataKey() *DataKeyOptions {
 // {region: string, key: string}.
 //
 // If being used with a local KMS provider, this option is not applicable and should not be specified.
-func (dk *DataKeyOptions) SetMasterKey(masterKey interface{}) *DataKeyOptions {
-	dk.MasterKey = masterKey
+func (dk *DataKeyOptions) SetMasterKey(mainKey interface{}) *DataKeyOptions {
+	dk.MasterKey = mainKey
 	return dk
 }
 

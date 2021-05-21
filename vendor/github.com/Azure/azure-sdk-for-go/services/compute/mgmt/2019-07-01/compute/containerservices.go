@@ -41,7 +41,7 @@ func NewContainerServicesClientWithBaseURI(baseURI string, subscriptionID string
 	return ContainerServicesClient{NewWithBaseURI(baseURI, subscriptionID)}
 }
 
-// CreateOrUpdate creates or updates a container service with the specified configuration of orchestrator, masters, and
+// CreateOrUpdate creates or updates a container service with the specified configuration of orchestrator, mains, and
 // agents.
 // Parameters:
 // resourceGroupName - the name of the resource group.
@@ -233,7 +233,7 @@ func (client ContainerServicesClient) DeleteResponder(resp *http.Response) (resu
 }
 
 // Get gets the properties of the specified container service in the specified subscription and resource group. The
-// operation returns the properties including state, orchestrator, number of masters and agents, and FQDNs of masters
+// operation returns the properties including state, orchestrator, number of mains and agents, and FQDNs of mains
 // and agents.
 // Parameters:
 // resourceGroupName - the name of the resource group.
@@ -312,7 +312,7 @@ func (client ContainerServicesClient) GetResponder(resp *http.Response) (result 
 }
 
 // List gets a list of container services in the specified subscription. The operation returns properties of each
-// container service including state, orchestrator, number of masters and agents, and FQDNs of masters and agents.
+// container service including state, orchestrator, number of mains and agents, and FQDNs of mains and agents.
 func (client ContainerServicesClient) List(ctx context.Context) (result ContainerServiceListResultPage, err error) {
 	if tracing.IsEnabled() {
 		ctx = tracing.StartSpan(ctx, fqdn+"/ContainerServicesClient.List")
@@ -423,8 +423,8 @@ func (client ContainerServicesClient) ListComplete(ctx context.Context) (result 
 }
 
 // ListByResourceGroup gets a list of container services in the specified subscription and resource group. The
-// operation returns properties of each container service including state, orchestrator, number of masters and agents,
-// and FQDNs of masters and agents.
+// operation returns properties of each container service including state, orchestrator, number of mains and agents,
+// and FQDNs of mains and agents.
 // Parameters:
 // resourceGroupName - the name of the resource group.
 func (client ContainerServicesClient) ListByResourceGroup(ctx context.Context, resourceGroupName string) (result ContainerServiceListResultPage, err error) {

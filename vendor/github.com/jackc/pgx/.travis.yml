@@ -4,7 +4,7 @@ go:
   - 1.x
   - tip
 
-# Derived from https://github.com/lib/pq/blob/master/.travis.yml
+# Derived from https://github.com/lib/pq/blob/main/.travis.yml
 before_install:
   - ./travis/before_install.bash
 

@@ -477,12 +477,12 @@ To run the driver tests you may need to adjust the configuration. See the [Testi
 Go-MySQL-Driver is not feature-complete yet. Your help is very appreciated.
 If you want to contribute, you can work on an [open issue](https://github.com/go-sql-driver/mysql/issues?state=open) or review a [pull request](https://github.com/go-sql-driver/mysql/pulls).
 
-See the [Contribution Guidelines](https://github.com/go-sql-driver/mysql/blob/master/CONTRIBUTING.md) for details.
+See the [Contribution Guidelines](https://github.com/go-sql-driver/mysql/blob/main/CONTRIBUTING.md) for details.
 
 ---------------------------------------
 
 ## License
-Go-MySQL-Driver is licensed under the [Mozilla Public License Version 2.0](https://raw.github.com/go-sql-driver/mysql/master/LICENSE)
+Go-MySQL-Driver is licensed under the [Mozilla Public License Version 2.0](https://raw.github.com/go-sql-driver/mysql/main/LICENSE)
 
 Mozilla summarizes the license scope as follows:
 > MPL: The copyleft applies to any files containing MPLed code.
@@ -495,7 +495,7 @@ That means:
 
 Please read the [MPL 2.0 FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/) if you have further questions regarding the license.
 
-You can read the full terms here: [LICENSE](https://raw.github.com/go-sql-driver/mysql/master/LICENSE).
+You can read the full terms here: [LICENSE](https://raw.github.com/go-sql-driver/mysql/main/LICENSE).
 
 ![Go Gopher and MySQL Dolphin](https://raw.github.com/wiki/go-sql-driver/mysql/go-mysql-driver_m.jpg "Golang Gopher transporting the MySQL Dolphin in a wheelbarrow")
 

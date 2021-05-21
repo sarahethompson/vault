@@ -56,13 +56,13 @@ type backend struct {
 	// Map to hold the EC2 client objects indexed by region and STS role.
 	// This avoids the overhead of creating a client object for every login request.
 	// When the credentials are modified or deleted, all the cached client objects
-	// will be flushed. The empty STS role signifies the master account
+	// will be flushed. The empty STS role signifies the main account
 	EC2ClientsMap map[string]map[string]*ec2.EC2
 
 	// Map to hold the IAM client objects indexed by region and STS role.
 	// This avoids the overhead of creating a client object for every login request.
 	// When the credentials are modified or deleted, all the cached client objects
-	// will be flushed. The empty STS role signifies the master account
+	// will be flushed. The empty STS role signifies the main account
 	IAMClientsMap map[string]map[string]*iam.IAM
 
 	// Map to associate a partition to a random region in that partition. Users of

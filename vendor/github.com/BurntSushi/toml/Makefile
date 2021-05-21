@@ -14,6 +14,6 @@ tags:
 	find ./ -name '*.go' -print0 | xargs -0 gotags > TAGS
 
 push:
-	git push origin master
-	git push github master
+	git push origin main
+	git push github main
 

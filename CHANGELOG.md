@@ -1429,7 +1429,7 @@ It is otherwise identical to 0.11.5.
 SECURITY:
 
  * When debugging a customer incident we discovered that in the case of
-   malformed data from an autoseal mechanism, Vault's master key could be
+   malformed data from an autoseal mechanism, Vault's main key could be
    logged in Vault's server log. For this to happen, the data would need to be
    modified by the autoseal mechanism after being submitted to it by Vault but
    prior to encryption, or after decryption, prior to it being returned to
@@ -1442,7 +1442,7 @@ SECURITY:
    mechanism returning bad data to Vault but with no error, in a working Vault
    configuration this code path should never be hit, and if hitting this issue
    Vault will not be unsealing properly anyways so it will be obvious what is
-   happening and an immediate rekey of the master key can be performed after
+   happening and an immediate rekey of the main key can be performed after
    service is restored. We have filed for a CVE (CVE-2018-19786) and a CVSS V3
    score of 5.2 has been assigned.
 
@@ -2099,9 +2099,9 @@ FEATURES:
    accounts.
  * Rekey Verification: Rekey operations can now require verification. This
    turns on a two-phase process where the existing key shares authorize
-   generating a new master key, and a threshold of the new, returned key shares
+   generating a new main key, and a threshold of the new, returned key shares
    must be provided to verify that they have been successfully received in
-   order for the actual master key to be rotated.
+   order for the actual main key to be rotated.
  * CIDR restrictions for `cert`, `userpass`, and `kubernetes` auth methods:
    You can now limit authentication to specific CIDRs; these will also be
    encoded in resultant tokens to limit their use.
@@ -2894,7 +2894,7 @@ FEATURES:
    unauthenticated endpoints.
  * **Barrier Rekey Support for Auto-Unseal (Enterprise)**: When using auto-unsealing
    functionality, the `rekey` operation is now supported; it uses recovery keys
-   to authorize the master key rekey.
+   to authorize the main key rekey.
  * **Operation Token for Disaster Recovery Actions (Enterprise)**: When using
    Disaster Recovery replication, a token can be created that can be used to
    authorize actions such as promotion and updating primary information, rather

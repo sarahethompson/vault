@@ -1,7 +1,7 @@
 # Collection of compression libraries for Go #
 
 [![GoDoc](https://godoc.org/github.com/dsnet/compress/cmp?status.svg)](https://godoc.org/github.com/dsnet/compress)
-[![Build Status](https://travis-ci.org/dsnet/compress.svg?branch=master)](https://travis-ci.org/dsnet/compress)
+[![Build Status](https://travis-ci.org/dsnet/compress.svg?branch=main)](https://travis-ci.org/dsnet/compress)
 [![Report Card](https://goreportcard.com/badge/github.com/dsnet/compress)](https://goreportcard.com/report/github.com/dsnet/compress)
 
 ## Introduction ##

@@ -45,7 +45,7 @@ type Changer struct {
 // resulting in a joint configuration that in terms of the Raft thesis[1]
 // (Section 4.3) corresponds to `C_{new,old}`.
 //
-// [1]: https://github.com/ongardie/dissertation/blob/master/online-trim.pdf
+// [1]: https://github.com/ongardie/dissertation/blob/main/online-trim.pdf
 func (c Changer) EnterJoint(autoLeave bool, ccs ...pb.ConfChangeSingle) (tracker.Config, tracker.ProgressMap, error) {
 	cfg, prs, err := c.checkAndCopy()
 	if err != nil {
@@ -88,7 +88,7 @@ func (c Changer) EnterJoint(autoLeave bool, ccs ...pb.ConfChangeSingle) (tracker
 // was held back by an overlapping voter in the former outgoing config will be
 // inserted into Learners.
 //
-// [1]: https://github.com/ongardie/dissertation/blob/master/online-trim.pdf
+// [1]: https://github.com/ongardie/dissertation/blob/main/online-trim.pdf
 func (c Changer) LeaveJoint() (tracker.Config, tracker.ProgressMap, error) {
 	cfg, prs, err := c.checkAndCopy()
 	if err != nil {

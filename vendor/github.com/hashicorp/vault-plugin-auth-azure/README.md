@@ -1,4 +1,4 @@
-# Vault Plugin: Azure Auth Backend [![Build Status](https://travis-ci.org/hashicorp/vault-plugin-auth-azure.svg?branch=master)](https://travis-ci.org/hashicorp/vault-plugin-auth-azure)
+# Vault Plugin: Azure Auth Backend [![Build Status](https://travis-ci.org/hashicorp/vault-plugin-auth-azure.svg?branch=main)](https://travis-ci.org/hashicorp/vault-plugin-auth-azure)
 
 
 This is a standalone backend plugin for use with [Hashicorp Vault](https://www.github.com/hashicorp/vault).

@@ -39,7 +39,7 @@ const maxInt = int(^uint(0) >> 1)
 //
 // Deprecated: Users should not use this struct. Service config should be received
 // through name resolver, as specified here
-// https://github.com/grpc/grpc/blob/master/doc/service_config.md
+// https://github.com/grpc/grpc/blob/main/doc/service_config.md
 type MethodConfig struct {
 	// WaitForReady indicates whether RPCs sent to this method should wait until
 	// the connection is ready by default (!failfast). The value specified via the
@@ -74,7 +74,7 @@ type lbConfig struct {
 //
 // Deprecated: Users should not use this struct. Service config should be received
 // through name resolver, as specified here
-// https://github.com/grpc/grpc/blob/master/doc/service_config.md
+// https://github.com/grpc/grpc/blob/main/doc/service_config.md
 type ServiceConfig struct {
 	serviceconfig.Config
 
@@ -128,7 +128,7 @@ type healthCheckConfig struct {
 
 // retryPolicy defines the go-native version of the retry policy defined by the
 // service config here:
-// https://github.com/grpc/proposal/blob/master/A6-client-retries.md#integration-with-service-config
+// https://github.com/grpc/proposal/blob/main/A6-client-retries.md#integration-with-service-config
 type retryPolicy struct {
 	// MaxAttempts is the maximum number of attempts, including the original RPC.
 	//
@@ -164,7 +164,7 @@ type jsonRetryPolicy struct {
 
 // retryThrottlingPolicy defines the go-native version of the retry throttling
 // policy defined by the service config here:
-// https://github.com/grpc/proposal/blob/master/A6-client-retries.md#integration-with-service-config
+// https://github.com/grpc/proposal/blob/main/A6-client-retries.md#integration-with-service-config
 type retryThrottlingPolicy struct {
 	// The number of tokens starts at maxTokens. The token_count will always be
 	// between 0 and maxTokens.

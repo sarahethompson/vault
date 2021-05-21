@@ -17,7 +17,7 @@ the
 [`template` package](https://godoc.org/github.com/hashicorp/go-sockaddr/template),
 tests,
 and
-[CLI utility](https://github.com/hashicorp/go-sockaddr/tree/master/cmd/sockaddr)
+[CLI utility](https://github.com/hashicorp/go-sockaddr/tree/main/cmd/sockaddr)
 for details and hints as to how to use this library.
 
 For example, with this library it is possible to find an IP address that:
@@ -58,13 +58,13 @@ address on the named interface.
 Given the possible complexity of the `sockaddr` library, there is a CLI utility
 that accompanies the library, also
 called
-[`sockaddr`](https://github.com/hashicorp/go-sockaddr/tree/master/cmd/sockaddr).
+[`sockaddr`](https://github.com/hashicorp/go-sockaddr/tree/main/cmd/sockaddr).
 The
-[`sockaddr`](https://github.com/hashicorp/go-sockaddr/tree/master/cmd/sockaddr)
+[`sockaddr`](https://github.com/hashicorp/go-sockaddr/tree/main/cmd/sockaddr)
 utility exposes nearly all of the functionality of the library and can be used
 either as an administrative tool or testing tool.  To install
 the
-[`sockaddr`](https://github.com/hashicorp/go-sockaddr/tree/master/cmd/sockaddr),
+[`sockaddr`](https://github.com/hashicorp/go-sockaddr/tree/main/cmd/sockaddr),
 run:
 
 ```text

@@ -18,7 +18,7 @@ type GenerateKeyDetails struct {
 	// If true, the generated key is also returned unencrypted.
 	IncludePlaintextKey *bool `mandatory:"true" json:"includePlaintextKey"`
 
-	// The OCID of the master encryption key to encrypt the generated data encryption key with.
+	// The OCID of the main encryption key to encrypt the generated data encryption key with.
 	KeyId *string `mandatory:"true" json:"keyId"`
 
 	KeyShape *KeyShape `mandatory:"true" json:"keyShape"`

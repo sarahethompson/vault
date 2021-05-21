@@ -149,7 +149,7 @@ type ClientInterface interface {
 	Timing(name string, value time.Duration, tags []string, rate float64) error
 
 	// TimeInMilliseconds sends timing information in milliseconds.
-	// It is flushed by statsd with percentiles, mean and other info (https://github.com/etsy/statsd/blob/master/docs/metric_types.md#timing)
+	// It is flushed by statsd with percentiles, mean and other info (https://github.com/etsy/statsd/blob/main/docs/metric_types.md#timing)
 	TimeInMilliseconds(name string, value float64, tags []string, rate float64) error
 
 	// Event sends the provided Event.
@@ -462,7 +462,7 @@ func (c *Client) Timing(name string, value time.Duration, tags []string, rate fl
 }
 
 // TimeInMilliseconds sends timing information in milliseconds.
-// It is flushed by statsd with percentiles, mean and other info (https://github.com/etsy/statsd/blob/master/docs/metric_types.md#timing)
+// It is flushed by statsd with percentiles, mean and other info (https://github.com/etsy/statsd/blob/main/docs/metric_types.md#timing)
 func (c *Client) TimeInMilliseconds(name string, value float64, tags []string, rate float64) error {
 	return c.addMetric(metric{namespace: c.namespace(), globalTags: c.globalTags(), metricType: timing, name: name, fvalue: value, tags: tags, rate: rate})
 }

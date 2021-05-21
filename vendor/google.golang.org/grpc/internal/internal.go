@@ -52,7 +52,7 @@ var (
 // it's health back by calling setConnectivityState().
 //
 // The health checking protocol is defined at:
-// https://github.com/grpc/grpc/blob/master/doc/health-checking.md
+// https://github.com/grpc/grpc/blob/main/doc/health-checking.md
 type HealthChecker func(ctx context.Context, newStream func(string) (interface{}, error), setConnectivityState func(connectivity.State, error), serviceName string) error
 
 const (

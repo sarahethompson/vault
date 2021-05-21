@@ -178,5 +178,5 @@ c.Println("This prints again cyan...")
 
 ## License
 
-The MIT License (MIT) - see [`LICENSE.md`](https://github.com/fatih/color/blob/master/LICENSE.md) for more details
+The MIT License (MIT) - see [`LICENSE.md`](https://github.com/fatih/color/blob/main/LICENSE.md) for more details
 

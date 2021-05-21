@@ -65,7 +65,7 @@ type CreateEvent struct {
 	Ref *string `json:"ref,omitempty"`
 	// RefType is the object that was created. Possible values are: "repository", "branch", "tag".
 	RefType      *string `json:"ref_type,omitempty"`
-	MasterBranch *string `json:"master_branch,omitempty"`
+	MasterBranch *string `json:"main_branch,omitempty"`
 	Description  *string `json:"description,omitempty"`
 
 	// The following fields are only populated by Webhook events.
@@ -416,7 +416,7 @@ type OrgBlockEvent struct {
 // The Webhook event name is "page_build".
 //
 // This event is triggered on push to a GitHub Pages enabled branch (gh-pages
-// for project pages, master for user and organization pages).
+// for project pages, main for user and organization pages).
 //
 // Events of this type are not visible in timelines, they are only used to trigger hooks.
 //
@@ -653,7 +653,7 @@ type PushEventRepository struct {
 	ForksCount      *int                `json:"forks_count,omitempty"`
 	OpenIssuesCount *int                `json:"open_issues_count,omitempty"`
 	DefaultBranch   *string             `json:"default_branch,omitempty"`
-	MasterBranch    *string             `json:"master_branch,omitempty"`
+	MasterBranch    *string             `json:"main_branch,omitempty"`
 	Organization    *string             `json:"organization,omitempty"`
 	URL             *string             `json:"url,omitempty"`
 	ArchiveURL      *string             `json:"archive_url,omitempty"`

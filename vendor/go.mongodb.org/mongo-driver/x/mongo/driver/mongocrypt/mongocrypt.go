@@ -136,7 +136,7 @@ func (m *MongoCrypt) CreateDataKeyContext(kmsProvider string, opts *options.Data
 		key := C.CString(lookupString(opts.MasterKey, "key"))
 		defer C.free(unsafe.Pointer(region))
 		defer C.free(unsafe.Pointer(key))
-		ok = bool(C.mongocrypt_ctx_setopt_masterkey_aws(ctx.wrapped, region, -1, key, -1))
+		ok = bool(C.mongocrypt_ctx_setopt_mainkey_aws(ctx.wrapped, region, -1, key, -1))
 		if !ok {
 			break
 		}
@@ -148,9 +148,9 @@ func (m *MongoCrypt) CreateDataKeyContext(kmsProvider string, opts *options.Data
 		}
 		endpointCStr := C.CString(endpoint)
 		defer C.free(unsafe.Pointer(endpointCStr))
-		ok = bool(C.mongocrypt_ctx_setopt_masterkey_aws_endpoint(ctx.wrapped, endpointCStr, -1))
+		ok = bool(C.mongocrypt_ctx_setopt_mainkey_aws_endpoint(ctx.wrapped, endpointCStr, -1))
 	case LocalProvider:
-		ok = bool(C.mongocrypt_ctx_setopt_masterkey_local(ctx.wrapped))
+		ok = bool(C.mongocrypt_ctx_setopt_mainkey_local(ctx.wrapped))
 	default:
 		return nil, ErrInvalidProvider
 	}

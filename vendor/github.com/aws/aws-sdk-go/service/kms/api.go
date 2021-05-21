@@ -57,7 +57,7 @@ func (c *KMS) CancelKeyDeletionRequest(input *CancelKeyDeletionInput) (req *requ
 
 // CancelKeyDeletion API operation for AWS Key Management Service.
 //
-// Cancels the deletion of a customer master key (CMK). When this operation
+// Cancels the deletion of a customer main key (CMK). When this operation
 // succeeds, the key state of the CMK is Disabled. To enable the CMK, use EnableKey.
 // You cannot perform this operation on a CMK in a different AWS account.
 //
@@ -171,7 +171,7 @@ func (c *KMS) ConnectCustomKeyStoreRequest(input *ConnectCustomKeyStoreInput) (r
 // Connects or reconnects a custom key store (https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html)
 // to its associated AWS CloudHSM cluster.
 //
-// The custom key store must be connected before you can create customer master
+// The custom key store must be connected before you can create customer main
 // keys (CMKs) in the key store or use the CMKs it contains. You can disconnect
 // and reconnect a custom key store at any time.
 //
@@ -349,7 +349,7 @@ func (c *KMS) CreateAliasRequest(input *CreateAliasInput) (req *request.Request,
 
 // CreateAlias API operation for AWS Key Management Service.
 //
-// Creates a display name for a customer managed customer master key (CMK).
+// Creates a display name for a customer managed customer main key (CMK).
 // You can use an alias to identify a CMK in cryptographic operations, such
 // as Encrypt and GenerateDataKey. You can change the CMK associated with the
 // alias at any time.
@@ -689,7 +689,7 @@ func (c *KMS) CreateGrantRequest(input *CreateGrantInput) (req *request.Request,
 
 // CreateGrant API operation for AWS Key Management Service.
 //
-// Adds a grant to a customer master key (CMK). The grant allows the grantee
+// Adds a grant to a customer main key (CMK). The grant allows the grantee
 // principal to use the CMK when the conditions specified in the grant are met.
 // When setting permissions, grants are an alternative to key policies.
 //
@@ -842,7 +842,7 @@ func (c *KMS) CreateKeyRequest(input *CreateKeyInput) (req *request.Request, out
 
 // CreateKey API operation for AWS Key Management Service.
 //
-// Creates a unique customer managed customer master key (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master-keys)
+// Creates a unique customer managed customer main key (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#main-keys)
 // (CMK) in your AWS account and Region. You cannot use this operation to create
 // a CMK in a different AWS account.
 //
@@ -1062,7 +1062,7 @@ func (c *KMS) DecryptRequest(input *DecryptInput) (req *request.Request, output 
 
 // Decrypt API operation for AWS Key Management Service.
 //
-// Decrypts ciphertext that was encrypted by a AWS KMS customer master key (CMK)
+// Decrypts ciphertext that was encrypted by a AWS KMS customer main key (CMK)
 // using any of the following operations:
 //
 //    * Encrypt
@@ -1253,7 +1253,7 @@ func (c *KMS) DeleteAliasRequest(input *DeleteAliasInput) (req *request.Request,
 //
 // Each CMK can have multiple aliases. To change the alias of a CMK, use DeleteAlias
 // to delete the current alias and CreateAlias to create a new alias. To associate
-// an existing alias with a different customer master key (CMK), call UpdateAlias.
+// an existing alias with a different customer main key (CMK), call UpdateAlias.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -1355,10 +1355,10 @@ func (c *KMS) DeleteCustomKeyStoreRequest(input *DeleteCustomKeyStoreInput) (req
 // with the custom key store, or affect any users or keys in the cluster.
 //
 // The custom key store that you delete cannot contain any AWS KMS customer
-// master keys (CMKs) (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys).
+// main keys (CMKs) (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#main_keys).
 // Before deleting the key store, verify that you will never need to use any
 // of the CMKs in the key store for any cryptographic operations. Then, use
-// ScheduleKeyDeletion to delete the AWS KMS customer master keys (CMKs) from
+// ScheduleKeyDeletion to delete the AWS KMS customer main keys (CMKs) from
 // the key store. When the scheduled waiting period expires, the ScheduleKeyDeletion
 // operation deletes the CMKs. Then it makes a best effort to delete the key
 // material from the associated cluster. However, you might need to manually
@@ -1390,7 +1390,7 @@ func (c *KMS) DeleteCustomKeyStoreRequest(input *DeleteCustomKeyStoreInput) (req
 // Returned Error Types:
 //   * CustomKeyStoreHasCMKsException
 //   The request was rejected because the custom key store contains AWS KMS customer
-//   master keys (CMKs). After verifying that you do not need to use the CMKs,
+//   main keys (CMKs). After verifying that you do not need to use the CMKs,
 //   use the ScheduleKeyDeletion operation to delete the CMKs. After they are
 //   deleted, you can delete the custom key store.
 //
@@ -1489,7 +1489,7 @@ func (c *KMS) DeleteImportedKeyMaterialRequest(input *DeleteImportedKeyMaterialI
 // DeleteImportedKeyMaterial API operation for AWS Key Management Service.
 //
 // Deletes key material that you previously imported. This operation makes the
-// specified customer master key (CMK) unusable. For more information about
+// specified customer main key (CMK) unusable. For more information about
 // importing key material into AWS KMS, see Importing Key Material (https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html)
 // in the AWS Key Management Service Developer Guide. You cannot perform this
 // operation on a CMK in a different AWS account.
@@ -1716,7 +1716,7 @@ func (c *KMS) DescribeKeyRequest(input *DescribeKeyInput) (req *request.Request,
 
 // DescribeKey API operation for AWS Key Management Service.
 //
-// Provides detailed information about a customer master key (CMK). You can
+// Provides detailed information about a customer main key (CMK). You can
 // run DescribeKey on a customer managed CMK (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk)
 // or an AWS managed CMK (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk).
 //
@@ -1745,7 +1745,7 @@ func (c *KMS) DescribeKeyRequest(input *DescribeKeyInput) (req *request.Request,
 //    and ListGrants.
 //
 // If you call the DescribeKey operation on a predefined AWS alias, that is,
-// an AWS alias with no key ID, AWS KMS creates an AWS managed CMK (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys).
+// an AWS alias with no key ID, AWS KMS creates an AWS managed CMK (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#main_keys).
 // Then, it associates the alias with the new CMK, and returns the KeyId and
 // Arn of the new CMK in the response.
 //
@@ -1843,7 +1843,7 @@ func (c *KMS) DisableKeyRequest(input *DisableKeyInput) (req *request.Request, o
 
 // DisableKey API operation for AWS Key Management Service.
 //
-// Sets the state of a customer master key (CMK) to disabled, thereby preventing
+// Sets the state of a customer main key (CMK) to disabled, thereby preventing
 // its use for cryptographic operations. You cannot perform this operation on
 // a CMK in a different AWS account.
 //
@@ -1955,7 +1955,7 @@ func (c *KMS) DisableKeyRotationRequest(input *DisableKeyRotationInput) (req *re
 // DisableKeyRotation API operation for AWS Key Management Service.
 //
 // Disables automatic rotation of the key material (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)
-// for the specified symmetric customer master key (CMK).
+// for the specified symmetric customer main key (CMK).
 //
 // You cannot enable automatic rotation of asymmetric CMKs, CMKs with imported
 // key material, or CMKs in a custom key store (https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html).
@@ -2073,12 +2073,12 @@ func (c *KMS) DisconnectCustomKeyStoreRequest(input *DisconnectCustomKeyStoreInp
 //
 // Disconnects the custom key store (https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html)
 // from its associated AWS CloudHSM cluster. While a custom key store is disconnected,
-// you can manage the custom key store and its customer master keys (CMKs),
+// you can manage the custom key store and its customer main keys (CMKs),
 // but you cannot create or use CMKs in the custom key store. You can reconnect
 // the custom key store at any time.
 //
 // While a custom key store is disconnected, all attempts to create customer
-// master keys (CMKs) in the custom key store or to use existing CMKs in cryptographic
+// main keys (CMKs) in the custom key store or to use existing CMKs in cryptographic
 // operations will fail. This action can prevent users from storing and accessing
 // sensitive data.
 //
@@ -2194,7 +2194,7 @@ func (c *KMS) EnableKeyRequest(input *EnableKeyInput) (req *request.Request, out
 
 // EnableKey API operation for AWS Key Management Service.
 //
-// Sets the key state of a customer master key (CMK) to enabled. This allows
+// Sets the key state of a customer main key (CMK) to enabled. This allows
 // you to use the CMK for cryptographic operations. You cannot perform this
 // operation on a CMK in a different AWS account.
 //
@@ -2307,7 +2307,7 @@ func (c *KMS) EnableKeyRotationRequest(input *EnableKeyRotationInput) (req *requ
 // EnableKeyRotation API operation for AWS Key Management Service.
 //
 // Enables automatic rotation of the key material (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)
-// for the specified symmetric customer master key (CMK). You cannot perform
+// for the specified symmetric customer main key (CMK). You cannot perform
 // this operation on a CMK in a different AWS account.
 //
 // You cannot enable automatic rotation of asymmetric CMKs, CMKs with imported
@@ -2422,7 +2422,7 @@ func (c *KMS) EncryptRequest(input *EncryptInput) (req *request.Request, output 
 
 // Encrypt API operation for AWS Key Management Service.
 //
-// Encrypts plaintext into ciphertext by using a customer master key (CMK).
+// Encrypts plaintext into ciphertext by using a customer main key (CMK).
 // The Encrypt operation has two primary use cases:
 //
 //    * You can encrypt small amounts of arbitrary data, such as a personal
@@ -2604,7 +2604,7 @@ func (c *KMS) GenerateDataKeyRequest(input *GenerateDataKeyInput) (req *request.
 // GenerateDataKey API operation for AWS Key Management Service.
 //
 // Generates a unique symmetric data key. This operation returns a plaintext
-// copy of the data key and a copy that is encrypted under a customer master
+// copy of the data key and a copy that is encrypted under a customer main
 // key (CMK) that you specify. You can use the plaintext key to encrypt your
 // data outside of AWS KMS and store the encrypted data key with the encrypted
 // data.
@@ -2792,7 +2792,7 @@ func (c *KMS) GenerateDataKeyPairRequest(input *GenerateDataKeyPairInput) (req *
 // key with the data. When you are ready to decrypt data or sign a message,
 // you can use the Decrypt operation to decrypt the encrypted private key.
 //
-// To generate a data key pair, you must specify a symmetric customer master
+// To generate a data key pair, you must specify a symmetric customer main
 // key (CMK) to encrypt the private key in a data key pair. You cannot use an
 // asymmetric CMK. To get the type of your CMK, use the DescribeKey operation.
 //
@@ -2939,7 +2939,7 @@ func (c *KMS) GenerateDataKeyPairWithoutPlaintextRequest(input *GenerateDataKeyP
 // is encrypted under the symmetric CMK you specify. Unlike GenerateDataKeyPair,
 // this operation does not return a plaintext private key.
 //
-// To generate a data key pair, you must specify a symmetric customer master
+// To generate a data key pair, you must specify a symmetric customer main
 // key (CMK) to encrypt the private key in the data key pair. You cannot use
 // an asymmetric CMK. To get the type of your CMK, use the KeySpec field in
 // the DescribeKey response.
@@ -3085,7 +3085,7 @@ func (c *KMS) GenerateDataKeyWithoutPlaintextRequest(input *GenerateDataKeyWitho
 // GenerateDataKeyWithoutPlaintext API operation for AWS Key Management Service.
 //
 // Generates a unique symmetric data key. This operation returns a data key
-// that is encrypted under a customer master key (CMK) that you specify. To
+// that is encrypted under a customer main key (CMK) that you specify. To
 // request an asymmetric data key pair, use the GenerateDataKeyPair or GenerateDataKeyPairWithoutPlaintext
 // operations.
 //
@@ -3108,7 +3108,7 @@ func (c *KMS) GenerateDataKeyWithoutPlaintextRequest(input *GenerateDataKeyWitho
 // The bytes in the keys are not related to the caller or CMK that is used to
 // encrypt the private key.
 //
-// To generate a data key, you must specify the symmetric customer master key
+// To generate a data key, you must specify the symmetric customer main key
 // (CMK) that is used to encrypt the data key. You cannot use an asymmetric
 // CMK to generate a data key. To get the type of your CMK, use the DescribeKey
 // operation.
@@ -3362,7 +3362,7 @@ func (c *KMS) GetKeyPolicyRequest(input *GetKeyPolicyInput) (req *request.Reques
 
 // GetKeyPolicy API operation for AWS Key Management Service.
 //
-// Gets a key policy attached to the specified customer master key (CMK). You
+// Gets a key policy attached to the specified customer main key (CMK). You
 // cannot perform this operation on a CMK in a different AWS account.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
@@ -3465,7 +3465,7 @@ func (c *KMS) GetKeyRotationStatusRequest(input *GetKeyRotationStatusInput) (req
 //
 // Gets a Boolean value that indicates whether automatic rotation of the key
 // material (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)
-// is enabled for the specified customer master key (CMK).
+// is enabled for the specified customer main key (CMK).
 //
 // You cannot enable automatic rotation of asymmetric CMKs, CMKs with imported
 // key material, or CMKs in a custom key store (https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html).
@@ -3589,7 +3589,7 @@ func (c *KMS) GetParametersForImportRequest(input *GetParametersForImportInput) 
 // GetParametersForImport API operation for AWS Key Management Service.
 //
 // Returns the items you need to import key material into a symmetric, customer
-// managed customer master key (CMK). For more information about importing key
+// managed customer main key (CMK). For more information about importing key
 // material into AWS KMS, see Importing Key Material (https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html)
 // in the AWS Key Management Service Developer Guide.
 //
@@ -3885,7 +3885,7 @@ func (c *KMS) ImportKeyMaterialRequest(input *ImportKeyMaterialInput) (req *requ
 
 // ImportKeyMaterial API operation for AWS Key Management Service.
 //
-// Imports key material into an existing symmetric AWS KMS customer master key
+// Imports key material into an existing symmetric AWS KMS customer main key
 // (CMK) that was created without key material. After you successfully import
 // key material into a CMK, you can reimport the same key material (https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material)
 // into that CMK, but you cannot import different key material.
@@ -3980,7 +3980,7 @@ func (c *KMS) ImportKeyMaterialRequest(input *ImportKeyMaterialInput) (req *requ
 //   * IncorrectKeyMaterialException
 //   The request was rejected because the key material in the request is, expired,
 //   invalid, or is not the same key material that was previously imported into
-//   this customer master key (CMK).
+//   this customer main key (CMK).
 //
 //   * ExpiredImportTokenException
 //   The request was rejected because the specified import token is expired. Use
@@ -3989,7 +3989,7 @@ func (c *KMS) ImportKeyMaterialRequest(input *ImportKeyMaterialInput) (req *requ
 //
 //   * InvalidImportTokenException
 //   The request was rejected because the provided import token is invalid or
-//   is associated with a different customer master key (CMK).
+//   is associated with a different customer main key (CMK).
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial
 func (c *KMS) ImportKeyMaterial(input *ImportKeyMaterialInput) (*ImportKeyMaterialOutput, error) {
@@ -4067,7 +4067,7 @@ func (c *KMS) ListAliasesRequest(input *ListAliasesInput) (req *request.Request,
 // list aliases in other accounts. For more information about aliases, see CreateAlias.
 //
 // By default, the ListAliases command returns all aliases in the account and
-// region. To get only the aliases that point to a particular customer master
+// region. To get only the aliases that point to a particular customer main
 // key (CMK), use the KeyId parameter.
 //
 // The ListAliases response can include aliases that you created and associated
@@ -4232,7 +4232,7 @@ func (c *KMS) ListGrantsRequest(input *ListGrantsInput) (req *request.Request, o
 
 // ListGrants API operation for AWS Key Management Service.
 //
-// Gets a list of all grants for the specified customer master key (CMK).
+// Gets a list of all grants for the specified customer main key (CMK).
 //
 // To perform this operation on a CMK in a different AWS account, specify the
 // key ARN in the value of the KeyId parameter.
@@ -4397,7 +4397,7 @@ func (c *KMS) ListKeyPoliciesRequest(input *ListKeyPoliciesInput) (req *request.
 
 // ListKeyPolicies API operation for AWS Key Management Service.
 //
-// Gets the names of the key policies that are attached to a customer master
+// Gets the names of the key policies that are attached to a customer main
 // key (CMK). This operation is designed to get policy names that you can use
 // in a GetKeyPolicy operation. However, the only valid policy name is default.
 // You cannot perform this operation on a CMK in a different AWS account.
@@ -4558,7 +4558,7 @@ func (c *KMS) ListKeysRequest(input *ListKeysInput) (req *request.Request, outpu
 
 // ListKeys API operation for AWS Key Management Service.
 //
-// Gets a list of all customer master keys (CMKs) in the caller's AWS account
+// Gets a list of all customer main keys (CMKs) in the caller's AWS account
 // and Region.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
@@ -4699,7 +4699,7 @@ func (c *KMS) ListResourceTagsRequest(input *ListResourceTagsInput) (req *reques
 
 // ListResourceTags API operation for AWS Key Management Service.
 //
-// Returns a list of all tags for the specified customer master key (CMK).
+// Returns a list of all tags for the specified customer main key (CMK).
 //
 // You cannot perform this operation on a CMK in a different AWS account.
 //
@@ -4894,7 +4894,7 @@ func (c *KMS) PutKeyPolicyRequest(input *PutKeyPolicyInput) (req *request.Reques
 
 // PutKeyPolicy API operation for AWS Key Management Service.
 //
-// Attaches a key policy to the specified customer master key (CMK). You cannot
+// Attaches a key policy to the specified customer main key (CMK). You cannot
 // perform this operation on a CMK in a different AWS account.
 //
 // For more information about key policies, see Key Policies (https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)
@@ -5012,7 +5012,7 @@ func (c *KMS) ReEncryptRequest(input *ReEncryptInput) (req *request.Request, out
 // ReEncrypt API operation for AWS Key Management Service.
 //
 // Decrypts ciphertext and then reencrypts it entirely within AWS KMS. You can
-// use this operation to change the customer master key (CMK) under which data
+// use this operation to change the customer main key (CMK) under which data
 // is encrypted, such as when you manually rotate (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-manually)
 // a CMK or change the CMK that protects a ciphertext. You can also use it to
 // reencrypt ciphertext under the same CMK, such as to change the encryption
@@ -5219,7 +5219,7 @@ func (c *KMS) RetireGrantRequest(input *RetireGrantInput) (req *request.Request,
 //    grant
 //
 // You must identify the grant to retire by its grant token or by a combination
-// of the grant ID and the Amazon Resource Name (ARN) of the customer master
+// of the grant ID and the Amazon Resource Name (ARN) of the customer main
 // key (CMK). A grant token is a unique variable-length base64-encoded string.
 // A grant ID is a 64 character unique identifier of a grant. The CreateGrant
 // operation returns both.
@@ -5329,7 +5329,7 @@ func (c *KMS) RevokeGrantRequest(input *RevokeGrantInput) (req *request.Request,
 
 // RevokeGrant API operation for AWS Key Management Service.
 //
-// Revokes the specified grant for the specified customer master key (CMK).
+// Revokes the specified grant for the specified customer main key (CMK).
 // You can revoke a grant to actively deny operations that depend on it.
 //
 // To perform this operation on a CMK in a different AWS account, specify the
@@ -5436,7 +5436,7 @@ func (c *KMS) ScheduleKeyDeletionRequest(input *ScheduleKeyDeletionInput) (req *
 
 // ScheduleKeyDeletion API operation for AWS Key Management Service.
 //
-// Schedules the deletion of a customer master key (CMK). You may provide a
+// Schedules the deletion of a customer main key (CMK). You may provide a
 // waiting period, specified in days, before deletion occurs. If you do not
 // provide a waiting period, the default period of 30 days is used. When this
 // operation is successful, the key state of the CMK changes to PendingDeletion.
@@ -5573,7 +5573,7 @@ func (c *KMS) SignRequest(input *SignInput) (req *request.Request, output *SignO
 //
 // Digital signatures are generated and verified by using asymmetric key pair,
 // such as an RSA or ECC pair that is represented by an asymmetric customer
-// master key (CMK). The key owner (or an authorized user) uses their private
+// main key (CMK). The key owner (or an authorized user) uses their private
 // key to sign a message. Anyone with the public key can verify that the message
 // was signed with that particular private key and that the message hasn't changed
 // since it was signed.
@@ -5723,7 +5723,7 @@ func (c *KMS) TagResourceRequest(input *TagResourceInput) (req *request.Request,
 
 // TagResource API operation for AWS Key Management Service.
 //
-// Adds or edits tags for a customer master key (CMK). You cannot perform this
+// Adds or edits tags for a customer main key (CMK). You cannot perform this
 // operation on a CMK in a different AWS account.
 //
 // Each tag consists of a tag key and a tag value. Tag keys and tag values are
@@ -5843,7 +5843,7 @@ func (c *KMS) UntagResourceRequest(input *UntagResourceInput) (req *request.Requ
 
 // UntagResource API operation for AWS Key Management Service.
 //
-// Removes the specified tags from the specified customer master key (CMK).
+// Removes the specified tags from the specified customer main key (CMK).
 // You cannot perform this operation on a CMK in a different AWS account.
 //
 // To remove a tag, specify the tag key. To change the tag value of an existing
@@ -5951,7 +5951,7 @@ func (c *KMS) UpdateAliasRequest(input *UpdateAliasInput) (req *request.Request,
 
 // UpdateAlias API operation for AWS Key Management Service.
 //
-// Associates an existing AWS KMS alias with a different customer master key
+// Associates an existing AWS KMS alias with a different customer main key
 // (CMK). Each alias is associated with only one CMK at a time, although a CMK
 // can have multiple aliases. The alias and the CMK must be in the same AWS
 // account and region. You cannot perform this operation on an alias in a different
@@ -6270,7 +6270,7 @@ func (c *KMS) UpdateKeyDescriptionRequest(input *UpdateKeyDescriptionInput) (req
 
 // UpdateKeyDescription API operation for AWS Key Management Service.
 //
-// Updates the description of a customer master key (CMK). To see the description
+// Updates the description of a customer main key (CMK). To see the description
 // of a CMK, use DescribeKey.
 //
 // You cannot perform this operation on a CMK in a different AWS account.
@@ -6590,7 +6590,7 @@ func (s *AlreadyExistsException) RequestID() string {
 type CancelKeyDeletionInput struct {
 	_ struct{} `type:"structure"`
 
-	// The unique identifier for the customer master key (CMK) for which to cancel
+	// The unique identifier for the customer main key (CMK) for which to cancel
 	// deletion.
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -6642,7 +6642,7 @@ func (s *CancelKeyDeletionInput) SetKeyId(v string) *CancelKeyDeletionInput {
 type CancelKeyDeletionOutput struct {
 	_ struct{} `type:"structure"`
 
-	// The unique identifier of the master key for which deletion is canceled.
+	// The unique identifier of the main key for which deletion is canceled.
 	KeyId *string `min:"1" type:"string"`
 }
 
@@ -7284,7 +7284,7 @@ type CreateGrantInput struct {
 	// GranteePrincipal is a required field
 	GranteePrincipal *string `min:"1" type:"string" required:"true"`
 
-	// The unique identifier for the customer master key (CMK) that the grant applies
+	// The unique identifier for the customer main key (CMK) that the grant applies
 	// to.
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify
@@ -7710,7 +7710,7 @@ func (s *CreateKeyOutput) SetKeyMetadata(v *KeyMetadata) *CreateKeyOutput {
 }
 
 // The request was rejected because the custom key store contains AWS KMS customer
-// master keys (CMKs). After verifying that you do not need to use the CMKs,
+// main keys (CMKs). After verifying that you do not need to use the CMKs,
 // use the ScheduleKeyDeletion operation to delete the CMKs. After they are
 // deleted, you can delete the custom key store.
 type CustomKeyStoreHasCMKsException struct {
@@ -8146,7 +8146,7 @@ type DecryptInput struct {
 	// in the AWS Key Management Service Developer Guide.
 	GrantTokens []*string `type:"list"`
 
-	// Specifies the customer master key (CMK) that AWS KMS will use to decrypt
+	// Specifies the customer main key (CMK) that AWS KMS will use to decrypt
 	// the ciphertext. Enter a key ID of the CMK that was used to encrypt the ciphertext.
 	//
 	// If you specify a KeyId value, the Decrypt operation succeeds only if the
@@ -8241,7 +8241,7 @@ type DecryptOutput struct {
 	// The encryption algorithm that was used to decrypt the ciphertext.
 	EncryptionAlgorithm *string `type:"string" enum:"EncryptionAlgorithmSpec"`
 
-	// The ARN of the customer master key that was used to perform the decryption.
+	// The ARN of the customer main key that was used to perform the decryption.
 	KeyId *string `min:"1" type:"string"`
 
 	// Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
@@ -8656,10 +8656,10 @@ type DescribeKeyInput struct {
 	// in the AWS Key Management Service Developer Guide.
 	GrantTokens []*string `type:"list"`
 
-	// Describes the specified customer master key (CMK).
+	// Describes the specified customer main key (CMK).
 	//
 	// If you specify a predefined AWS alias (an AWS alias with no key ID), KMS
-	// associates the alias with an AWS managed CMK (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys)
+	// associates the alias with an AWS managed CMK (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#main_keys)
 	// and returns its KeyId and Arn in the response.
 	//
 	// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name,
@@ -8747,7 +8747,7 @@ func (s *DescribeKeyOutput) SetKeyMetadata(v *KeyMetadata) *DescribeKeyOutput {
 type DisableKeyInput struct {
 	_ struct{} `type:"structure"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//
@@ -8812,7 +8812,7 @@ func (s DisableKeyOutput) GoString() string {
 type DisableKeyRotationInput struct {
 	_ struct{} `type:"structure"`
 
-	// Identifies a symmetric customer master key (CMK). You cannot enable automatic
+	// Identifies a symmetric customer main key (CMK). You cannot enable automatic
 	// rotation of asymmetric CMKs (https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks),
 	// CMKs with imported key material (https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html),
 	// or CMKs in a custom key store (https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html).
@@ -8992,7 +8992,7 @@ func (s DisconnectCustomKeyStoreOutput) GoString() string {
 type EnableKeyInput struct {
 	_ struct{} `type:"structure"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//
@@ -9057,7 +9057,7 @@ func (s EnableKeyOutput) GoString() string {
 type EnableKeyRotationInput struct {
 	_ struct{} `type:"structure"`
 
-	// Identifies a symmetric customer master key (CMK). You cannot enable automatic
+	// Identifies a symmetric customer main key (CMK). You cannot enable automatic
 	// rotation of asymmetric CMKs, CMKs with imported key material, or CMKs in
 	// a custom key store (https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html).
 	//
@@ -9153,7 +9153,7 @@ type EncryptInput struct {
 	// in the AWS Key Management Service Developer Guide.
 	GrantTokens []*string `type:"list"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name,
 	// or alias ARN. When using an alias name, prefix it with "alias/". To specify
@@ -9895,7 +9895,7 @@ type GenerateDataKeyWithoutPlaintextInput struct {
 	// in the AWS Key Management Service Developer Guide.
 	GrantTokens []*string `type:"list"`
 
-	// The identifier of the symmetric customer master key (CMK) that encrypts the
+	// The identifier of the symmetric customer main key (CMK) that encrypts the
 	// data key.
 	//
 	// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name,
@@ -10102,7 +10102,7 @@ func (s *GenerateRandomOutput) SetPlaintext(v []byte) *GenerateRandomOutput {
 type GetKeyPolicyInput struct {
 	_ struct{} `type:"structure"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//
@@ -10194,7 +10194,7 @@ func (s *GetKeyPolicyOutput) SetPolicy(v string) *GetKeyPolicyOutput {
 type GetKeyRotationStatusInput struct {
 	_ struct{} `type:"structure"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify
 	// a CMK in a different AWS account, you must use the key ARN.
@@ -10657,7 +10657,7 @@ type GrantListEntry struct {
 	// The AWS account under which the grant was issued.
 	IssuingAccount *string `min:"1" type:"string"`
 
-	// The unique identifier for the customer master key (CMK) to which the grant
+	// The unique identifier for the customer main key (CMK) to which the grant
 	// applies.
 	KeyId *string `min:"1" type:"string"`
 
@@ -10929,7 +10929,7 @@ func (s *IncorrectKeyException) RequestID() string {
 
 // The request was rejected because the key material in the request is, expired,
 // invalid, or is not the same key material that was previously imported into
-// this customer master key (CMK).
+// this customer main key (CMK).
 type IncorrectKeyMaterialException struct {
 	_            struct{}                  `type:"structure"`
 	RespMetadata protocol.ResponseMetadata `json:"-" xml:"-"`
@@ -11391,7 +11391,7 @@ func (s *InvalidGrantTokenException) RequestID() string {
 }
 
 // The request was rejected because the provided import token is invalid or
-// is associated with a different customer master key (CMK).
+// is associated with a different customer main key (CMK).
 type InvalidImportTokenException struct {
 	_            struct{}                  `type:"structure"`
 	RespMetadata protocol.ResponseMetadata `json:"-" xml:"-"`
@@ -11724,7 +11724,7 @@ func (s *KeyListEntry) SetKeyId(v string) *KeyListEntry {
 	return s
 }
 
-// Contains metadata about a customer master key (CMK).
+// Contains metadata about a customer main key (CMK).
 //
 // This data type is used as a response element for the CreateKey and DescribeKey
 // operations.
@@ -11785,7 +11785,7 @@ type KeyMetadata struct {
 
 	// The manager of the CMK. CMKs in your AWS account are either customer managed
 	// or AWS managed. For more information about the difference, see Customer Master
-	// Keys (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys)
+	// Keys (https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#main_keys)
 	// in the AWS Key Management Service Developer Guide.
 	KeyManager *string `type:"string" enum:"KeyManagerType"`
 
@@ -12172,7 +12172,7 @@ func (s *ListAliasesOutput) SetTruncated(v bool) *ListAliasesOutput {
 type ListGrantsInput struct {
 	_ struct{} `type:"structure"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify
 	// a CMK in a different AWS account, you must use the key ARN.
@@ -12300,7 +12300,7 @@ func (s *ListGrantsResponse) SetTruncated(v bool) *ListGrantsResponse {
 type ListKeyPoliciesInput struct {
 	_ struct{} `type:"structure"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//
@@ -12484,7 +12484,7 @@ func (s *ListKeysInput) SetMarker(v string) *ListKeysInput {
 type ListKeysOutput struct {
 	_ struct{} `type:"structure"`
 
-	// A list of customer master keys (CMKs).
+	// A list of customer main keys (CMKs).
 	Keys []*KeyListEntry `type:"list"`
 
 	// When Truncated is true, this element is present and contains the value to
@@ -12529,7 +12529,7 @@ func (s *ListKeysOutput) SetTruncated(v bool) *ListKeysOutput {
 type ListResourceTagsInput struct {
 	_ struct{} `type:"structure"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//
@@ -12868,7 +12868,7 @@ type PutKeyPolicyInput struct {
 	// The default value is false.
 	BypassPolicyLockoutSafetyCheck *bool `type:"boolean"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//
@@ -13343,7 +13343,7 @@ type RevokeGrantInput struct {
 	// GrantId is a required field
 	GrantId *string `min:"1" type:"string" required:"true"`
 
-	// A unique identifier for the customer master key associated with the grant.
+	// A unique identifier for the customer main key associated with the grant.
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify
 	// a CMK in a different AWS account, you must use the key ARN.
@@ -13421,7 +13421,7 @@ func (s RevokeGrantOutput) GoString() string {
 type ScheduleKeyDeletionInput struct {
 	_ struct{} `type:"structure"`
 
-	// The unique identifier of the customer master key (CMK) to delete.
+	// The unique identifier of the customer main key (CMK) to delete.
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//
@@ -13437,7 +13437,7 @@ type ScheduleKeyDeletionInput struct {
 	KeyId *string `min:"1" type:"string" required:"true"`
 
 	// The waiting period, specified in number of days. After the waiting period
-	// ends, AWS KMS deletes the customer master key (CMK).
+	// ends, AWS KMS deletes the customer main key (CMK).
 	//
 	// This value is optional. If you include a value, it must be between 7 and
 	// 30, inclusive. If you do not include a value, it defaults to 30.
@@ -13488,10 +13488,10 @@ func (s *ScheduleKeyDeletionInput) SetPendingWindowInDays(v int64) *ScheduleKeyD
 type ScheduleKeyDeletionOutput struct {
 	_ struct{} `type:"structure"`
 
-	// The date and time after which AWS KMS deletes the customer master key (CMK).
+	// The date and time after which AWS KMS deletes the customer main key (CMK).
 	DeletionDate *time.Time `type:"timestamp"`
 
-	// The unique identifier of the customer master key (CMK) for which deletion
+	// The unique identifier of the customer main key (CMK) for which deletion
 	// is scheduled.
 	KeyId *string `min:"1" type:"string"`
 }
@@ -14246,7 +14246,7 @@ type UpdateKeyDescriptionInput struct {
 	// Description is a required field
 	Description *string `type:"string" required:"true"`
 
-	// A unique identifier for the customer master key (CMK).
+	// A unique identifier for the customer main key (CMK).
 	//
 	// Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
 	//

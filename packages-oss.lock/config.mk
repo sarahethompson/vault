@@ -55,7 +55,7 @@ GIT_EXCLUDE_LIST = $(call QUOTE_LIST,$(addprefix $(GIT_EXCLUDE_PREFIX),$(1)))
 
 # ALWAYS_EXCLUDE_SOURCE prevents source from these directories from taking
 # part in the SOURCE_ID, or from being sent to the builder image layers.
-# This is important for allowing the head of master to build other commits
+# This is important for allowing the head of main to build other commits
 # where this build system has not been vendored.
 #
 # Source in LOCKDIR is encoded as PACKAGE_SPEC_ID and included in paths

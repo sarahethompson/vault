@@ -9,7 +9,7 @@ import (
 )
 
 // TarLz4 facilitates lz4 compression
-// (https://github.com/lz4/lz4/tree/master/doc)
+// (https://github.com/lz4/lz4/tree/main/doc)
 // of tarball archives.
 type TarLz4 struct {
 	*Tar

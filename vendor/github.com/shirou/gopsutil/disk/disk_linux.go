@@ -269,7 +269,7 @@ func PartitionsWithContext(ctx context.Context, all bool) ([]PartitionStat, erro
 			}
 		} else {
 			// a line of self/mountinfo has the following structure:
-			// 36  35  98:0 /mnt1 /mnt2 rw,noatime master:1 - ext3 /dev/root rw,errors=continue
+			// 36  35  98:0 /mnt1 /mnt2 rw,noatime main:1 - ext3 /dev/root rw,errors=continue
 			// (1) (2) (3)   (4)   (5)      (6)      (7)   (8) (9)   (10)         (11)
 
 			// split the mountinfo line by the separator hyphen

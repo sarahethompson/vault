@@ -159,7 +159,7 @@ func buildCanonicalizedResource(accountName, uri string, keyType SharedKeyType) 
 		return "", fmt.Errorf(errMsg, err.Error())
 	}
 
-	// See https://github.com/Azure/azure-storage-net/blob/master/Lib/Common/Core/Util/AuthenticationUtility.cs#L277
+	// See https://github.com/Azure/azure-storage-net/blob/main/Lib/Common/Core/Util/AuthenticationUtility.cs#L277
 	if keyType == SharedKey {
 		if len(params) > 0 {
 			cr.WriteString("\n")

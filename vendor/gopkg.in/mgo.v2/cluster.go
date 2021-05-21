@@ -51,7 +51,7 @@ type mongoCluster struct {
 	userSeeds    []string
 	dynaSeeds    []string
 	servers      mongoServers
-	masters      mongoServers
+	mains      mongoServers
 	references   int
 	syncing      bool
 	direct       bool
@@ -118,7 +118,7 @@ func (cluster *mongoCluster) LiveServers() (servers []string) {
 
 func (cluster *mongoCluster) removeServer(server *mongoServer) {
 	cluster.Lock()
-	cluster.masters.Remove(server)
+	cluster.mains.Remove(server)
 	other := cluster.servers.Remove(server)
 	cluster.Unlock()
 	if other != nil {
@@ -144,7 +144,7 @@ func (cluster *mongoCluster) isMaster(socket *mongoSocket, result *isMasterResul
 	// Monotonic let's it talk to a slave and still hold the socket.
 	session := newSession(Monotonic, cluster, 10*time.Second)
 	session.setSocket(socket)
-	err := session.Run("ismaster", result)
+	err := session.Run("ismain", result)
 	session.Close()
 	return err
 }
@@ -197,10 +197,10 @@ func (cluster *mongoCluster) syncServer(server *mongoServer) (info *mongoServerI
 		socket.Release()
 		if err != nil {
 			tryerr = err
-			logf("SYNC Command 'ismaster' to %s failed: %v", addr, err)
+			logf("SYNC Command 'ismain' to %s failed: %v", addr, err)
 			continue
 		}
-		debugf("SYNC Result of 'ismaster' from %s: %#v", addr, result)
+		debugf("SYNC Result of 'ismain' from %s: %#v", addr, result)
 		break
 	}
 
@@ -210,7 +210,7 @@ func (cluster *mongoCluster) syncServer(server *mongoServer) (info *mongoServerI
 	}
 
 	if result.IsMaster {
-		debugf("SYNC %s is a master.", addr)
+		debugf("SYNC %s is a main.", addr)
 		if !server.info.Master {
 			// Made an incorrect assumption above, so fix stats.
 			stats.conn(-1, false)
@@ -221,9 +221,9 @@ func (cluster *mongoCluster) syncServer(server *mongoServer) (info *mongoServerI
 	} else if cluster.direct {
 		logf("SYNC %s in unknown state. Pretending it's a slave due to direct connection.", addr)
 	} else {
-		logf("SYNC %s is neither a master nor a slave.", addr)
+		logf("SYNC %s is neither a main nor a slave.", addr)
 		// Let stats track it as whatever was known before.
-		return nil, nil, errors.New(addr + " is not a master nor slave")
+		return nil, nil, errors.New(addr + " is not a main nor slave")
 	}
 
 	info = &mongoServerInfo{
@@ -236,7 +236,7 @@ func (cluster *mongoCluster) syncServer(server *mongoServer) (info *mongoServerI
 
 	hosts = make([]string, 0, 1+len(result.Hosts)+len(result.Passives))
 	if result.Primary != "" {
-		// First in the list to speed up master discovery.
+		// First in the list to speed up main discovery.
 		hosts = append(hosts, result.Primary)
 	}
 	hosts = append(hosts, result.Hosts...)
@@ -265,8 +265,8 @@ func (cluster *mongoCluster) addServer(server *mongoServer, info *mongoServerInf
 		}
 		cluster.servers.Add(server)
 		if info.Master {
-			cluster.masters.Add(server)
-			log("SYNC Adding ", server.Addr, " to cluster as a master.")
+			cluster.mains.Add(server)
+			log("SYNC Adding ", server.Addr, " to cluster as a main.")
 		} else {
 			log("SYNC Adding ", server.Addr, " to cluster as a slave.")
 		}
@@ -276,11 +276,11 @@ func (cluster *mongoCluster) addServer(server *mongoServer, info *mongoServerInf
 		}
 		if server.Info().Master != info.Master {
 			if info.Master {
-				log("SYNC Server ", server.Addr, " is now a master.")
-				cluster.masters.Add(server)
+				log("SYNC Server ", server.Addr, " is now a main.")
+				cluster.mains.Add(server)
 			} else {
 				log("SYNC Server ", server.Addr, " is now a slave.")
-				cluster.masters.Remove(server)
+				cluster.mains.Remove(server)
 			}
 		}
 	}
@@ -378,11 +378,11 @@ func (cluster *mongoCluster) syncServersLoop() {
 		// restart syncing if they wish to.
 		cluster.serverSynced.Broadcast()
 		// Check if we have to restart immediately either way.
-		restart := !direct && cluster.masters.Empty() || cluster.servers.Empty()
+		restart := !direct && cluster.mains.Empty() || cluster.servers.Empty()
 		cluster.Unlock()
 
 		if restart {
-			log("SYNC No masters found. Will synchronize again.")
+			log("SYNC No mains found. Will synchronize again.")
 			time.Sleep(syncShortDelay)
 			continue
 		}
@@ -559,8 +559,8 @@ func (cluster *mongoCluster) syncServersIteration(direct bool) {
 	}
 
 	cluster.Lock()
-	mastersLen := cluster.masters.Len()
-	logf("SYNC Synchronization completed: %d master(s) and %d slave(s) alive.", mastersLen, cluster.servers.Len()-mastersLen)
+	mainsLen := cluster.mains.Len()
+	logf("SYNC Synchronization completed: %d main(s) and %d slave(s) alive.", mainsLen, cluster.servers.Len()-mainsLen)
 
 	// Update dynamic seeds, but only if we have any good servers. Otherwise,
 	// leave them alone for better chances of a successful sync in the future.
@@ -577,7 +577,7 @@ func (cluster *mongoCluster) syncServersIteration(direct bool) {
 
 // AcquireSocket returns a socket to a server in the cluster.  If slaveOk is
 // true, it will attempt to return a socket to a slave server.  If it is
-// false, the socket will necessarily be to a master server.
+// false, the socket will necessarily be to a main server.
 func (cluster *mongoCluster) AcquireSocket(mode Mode, slaveOk bool, syncTimeout time.Duration, socketTimeout time.Duration, serverTags []bson.D, poolLimit int) (s *mongoSocket, err error) {
 	var started time.Time
 	var syncCount uint
@@ -585,13 +585,13 @@ func (cluster *mongoCluster) AcquireSocket(mode Mode, slaveOk bool, syncTimeout 
 	for {
 		cluster.RLock()
 		for {
-			mastersLen := cluster.masters.Len()
-			slavesLen := cluster.servers.Len() - mastersLen
-			debugf("Cluster has %d known masters and %d known slaves.", mastersLen, slavesLen)
-			if mastersLen > 0 && !(slaveOk && mode == Secondary) || slavesLen > 0 && slaveOk {
+			mainsLen := cluster.mains.Len()
+			slavesLen := cluster.servers.Len() - mainsLen
+			debugf("Cluster has %d known mains and %d known slaves.", mainsLen, slavesLen)
+			if mainsLen > 0 && !(slaveOk && mode == Secondary) || slavesLen > 0 && slaveOk {
 				break
 			}
-			if mastersLen > 0 && mode == Secondary && cluster.masters.HasMongos() {
+			if mainsLen > 0 && mode == Secondary && cluster.mains.HasMongos() {
 				break
 			}
 			if started.IsZero() {
@@ -613,7 +613,7 @@ func (cluster *mongoCluster) AcquireSocket(mode Mode, slaveOk bool, syncTimeout 
 		if slaveOk {
 			server = cluster.servers.BestFit(mode, serverTags)
 		} else {
-			server = cluster.masters.BestFit(mode, nil)
+			server = cluster.mains.BestFit(mode, nil)
 		}
 		cluster.RUnlock()
 
@@ -641,7 +641,7 @@ func (cluster *mongoCluster) AcquireSocket(mode Mode, slaveOk bool, syncTimeout 
 			var result isMasterResult
 			err := cluster.isMaster(s, &result)
 			if err != nil || !result.IsMaster {
-				logf("Cannot confirm server %s as master (%v)", server.Addr, err)
+				logf("Cannot confirm server %s as main (%v)", server.Addr, err)
 				s.Release()
 				cluster.syncServers()
 				time.Sleep(100 * time.Millisecond)

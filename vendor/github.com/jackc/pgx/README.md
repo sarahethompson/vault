@@ -149,4 +149,4 @@ Set `replicationConnConfig` appropriately in `conn_config_test.go`.
 
 ## Version Policy
 
-pgx follows semantic versioning for the documented public API on stable releases. Branch `v3` is the latest stable release. `master` can contain new features or behavior that will change or be removed before being merged to the stable `v3` branch (in practice, this occurs very rarely). `v2` is the previous stable release.
+pgx follows semantic versioning for the documented public API on stable releases. Branch `v3` is the latest stable release. `main` can contain new features or behavior that will change or be removed before being merged to the stable `v3` branch (in practice, this occurs very rarely). `v2` is the previous stable release.

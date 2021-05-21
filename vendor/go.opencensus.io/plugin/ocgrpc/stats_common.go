@@ -172,7 +172,7 @@ func handleRPCEnd(ctx context.Context, s *stats.End) {
 }
 
 func statusCodeToString(s *status.Status) string {
-	// see https://github.com/grpc/grpc/blob/master/doc/statuscodes.md
+	// see https://github.com/grpc/grpc/blob/main/doc/statuscodes.md
 	switch c := s.Code(); c {
 	case codes.OK:
 		return "OK"

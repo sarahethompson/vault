@@ -54,10 +54,10 @@ available when using Vault HSM.
   original binary representation.
 
 - `secret_shares` `(int: <required>)` – Specifies the number of shares to
-  split the master key into.
+  split the main key into.
 
 - `secret_threshold` `(int: <required>)` – Specifies the number of shares
-  required to reconstruct the master key. This must be less than or equal
+  required to reconstruct the main key. This must be less than or equal
   `secret_shares`. If using Vault HSM with auto-unsealing, this value must be
   the same as `secret_shares`.
 
@@ -100,7 +100,7 @@ $ curl \
 ### Sample Response
 
 A JSON-encoded object including the (possibly encrypted, if `pgp_keys` was
-provided) master keys, base 64 encoded master keys and initial root token:
+provided) main keys, base 64 encoded main keys and initial root token:
 
 ```json
 {

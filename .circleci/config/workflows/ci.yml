@@ -35,7 +35,7 @@ jobs:
       filters:
         branches:
           only:
-            - master
+            - main
   - algolia-index:
       context: vault-docs
       filters:

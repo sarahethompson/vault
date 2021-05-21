@@ -26,7 +26,7 @@ func (g *generateRecoveryToken) authenticate(ctx context.Context, c *Core, combi
 		return errwrap.Wrapf("unable to authenticate: {{err}}", err)
 	}
 
-	// Use the retrieved master key to unseal the barrier
+	// Use the retrieved main key to unseal the barrier
 	if err := c.barrier.Unseal(ctx, key); err != nil {
 		return errwrap.Wrapf("recovery operation token generation failed, cannot unseal barrier: {{err}}", err)
 	}

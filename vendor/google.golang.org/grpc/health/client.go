@@ -55,7 +55,7 @@ func init() {
 const healthCheckMethod = "/grpc.health.v1.Health/Watch"
 
 // This function implements the protocol defined at:
-// https://github.com/grpc/grpc/blob/master/doc/health-checking.md
+// https://github.com/grpc/grpc/blob/main/doc/health-checking.md
 func clientHealthCheck(ctx context.Context, newStream func(string) (interface{}, error), setConnectivityState func(connectivity.State, error), service string) error {
 	tryCnt := 0
 

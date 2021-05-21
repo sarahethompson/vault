@@ -2,7 +2,7 @@ gocql
 =====
 
 [![Join the chat at https://gitter.im/gocql/gocql](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gocql/gocql?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/gocql/gocql.svg?branch=master)](https://travis-ci.org/gocql/gocql)
+[![Build Status](https://travis-ci.org/gocql/gocql.svg?branch=main)](https://travis-ci.org/gocql/gocql)
 [![GoDoc](https://godoc.org/github.com/gocql/gocql?status.svg)](https://godoc.org/github.com/gocql/gocql)
 
 Package gocql implements a fast and robust Cassandra client for the

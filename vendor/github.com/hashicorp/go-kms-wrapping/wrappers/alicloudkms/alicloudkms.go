@@ -175,7 +175,7 @@ func (k *Wrapper) HMACKeyID() string {
 	return ""
 }
 
-// Encrypt is used to encrypt the master key using the the AliCloud CMK.
+// Encrypt is used to encrypt the main key using the the AliCloud CMK.
 // This returns the ciphertext, and/or any errors from this
 // call. This should be called after the KMS client has been instantiated.
 func (k *Wrapper) Encrypt(_ context.Context, plaintext, aad []byte) (blob *wrapping.EncryptedBlobInfo, err error) {

@@ -9,7 +9,7 @@ import (
 )
 
 // TarBz2 facilitates bzip2 compression
-// (https://github.com/dsnet/compress/blob/master/doc/bzip2-format.pdf)
+// (https://github.com/dsnet/compress/blob/main/doc/bzip2-format.pdf)
 // of tarball archives.
 type TarBz2 struct {
 	*Tar

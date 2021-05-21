@@ -9,6 +9,6 @@ go:
 
 branches:
   only:
-    - master
+    - main
 
 script: make updatedeps test testrace

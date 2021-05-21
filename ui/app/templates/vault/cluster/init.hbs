@@ -34,7 +34,7 @@
               Please securely distribute the keys below. When the Vault is re-sealed, restarted, or stopped, you must
               provide at least <strong class="has-text-danger">{{secret_threshold}}</strong> of these keys to unseal it
               again.
-              Vault does not store the master key. Without at least <strong class="has-text-danger">{{secret_threshold}}</strong>
+              Vault does not store the main key. Without at least <strong class="has-text-danger">{{secret_threshold}}</strong>
               keys, your Vault will remain permanently sealed.
             {{/if}}
           </p>
@@ -114,7 +114,7 @@
   {{else}}
     <Page.header>
       <h1 class="title h5">
-        Let's set up the initial set of master keys that you’ll need in case of an emergency
+        Let's set up the initial set of main keys that you’ll need in case of an emergency
       </h1>
     </Page.header>
     <Page.content>
@@ -155,7 +155,7 @@
               }}
             </div>
             <p class="help has-text-grey">
-              The number of key shares to split the master key into
+              The number of key shares to split the main key into
             </p>
           </div>
           <div class="field">
@@ -180,7 +180,7 @@
               }}
             </div>
             <p class="help has-text-grey">
-              The number of key shares required to reconstruct the master key
+              The number of key shares required to reconstruct the main key
             </p>
           </div>
           <ToggleButton

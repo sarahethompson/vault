@@ -24,9 +24,9 @@ trap finish EXIT
 
 pushd "$TMP"
 mkdir -p grpc/gcp
-curl https://raw.githubusercontent.com/grpc/grpc-proto/master/grpc/gcp/altscontext.proto > grpc/gcp/altscontext.proto
-curl https://raw.githubusercontent.com/grpc/grpc-proto/master/grpc/gcp/handshaker.proto > grpc/gcp/handshaker.proto
-curl https://raw.githubusercontent.com/grpc/grpc-proto/master/grpc/gcp/transport_security_common.proto > grpc/gcp/transport_security_common.proto
+curl https://raw.githubusercontent.com/grpc/grpc-proto/main/grpc/gcp/altscontext.proto > grpc/gcp/altscontext.proto
+curl https://raw.githubusercontent.com/grpc/grpc-proto/main/grpc/gcp/handshaker.proto > grpc/gcp/handshaker.proto
+curl https://raw.githubusercontent.com/grpc/grpc-proto/main/grpc/gcp/transport_security_common.proto > grpc/gcp/transport_security_common.proto
 
 protoc --go_out=plugins=grpc,paths=source_relative:. -I. grpc/gcp/*.proto
 popd

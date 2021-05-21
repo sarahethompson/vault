@@ -26,7 +26,7 @@
   version = "v0.8.1"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/tv42/httpunix"
   packages = ["."]
   revision = "b75d8614f926c077e48d85f1f8f7885b758c6225"

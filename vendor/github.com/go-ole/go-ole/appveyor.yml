@@ -10,7 +10,7 @@ os: Windows Server 2012 R2
 
 branches:
   only:
-    - master
+    - main
     - v1.2
     - v1.1
     - v1.0

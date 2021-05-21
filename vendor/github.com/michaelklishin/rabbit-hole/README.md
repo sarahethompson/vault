@@ -4,7 +4,7 @@ This library is a [RabbitMQ HTTP API](https://raw.githack.com/rabbitmq/rabbitmq-
 
 ## Supported Go Versions
 
-Rabbit Hole supports the last 2 stable Go versions, as well as the version in development (a.k.a. master).
+Rabbit Hole supports the last 2 stable Go versions, as well as the version in development (a.k.a. main).
 
 
 ## Supported RabbitMQ Versions
@@ -28,7 +28,7 @@ It is largely (80-90%) feature complete and decently documented.
 ## Change Log
 
 If upgrading from an earlier release, please consult with
-the [change log](https://github.com/michaelklishin/rabbit-hole/blob/master/ChangeLog.md).
+the [change log](https://github.com/michaelklishin/rabbit-hole/blob/main/ChangeLog.md).
 
 
 ## Installation
@@ -360,12 +360,12 @@ rmqc.SetTransport(transport)
 
 ## CI Status
 
-[![Build Status](https://travis-ci.org/michaelklishin/rabbit-hole.svg?branch=master)](https://travis-ci.org/michaelklishin/rabbit-hole)
+[![Build Status](https://travis-ci.org/michaelklishin/rabbit-hole.svg?branch=main)](https://travis-ci.org/michaelklishin/rabbit-hole)
 
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/michaelklishin/rabbit-hole/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/michaelklishin/rabbit-hole/blob/main/CONTRIBUTING.md)
 
 
 ## License & Copyright

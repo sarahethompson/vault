@@ -19,7 +19,7 @@ before_install:
 
 branches:
   only:
-  - master
+  - main
 
 matrix:
   fast_finish: true

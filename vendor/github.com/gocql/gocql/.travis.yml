@@ -13,7 +13,7 @@ matrix:
 
 branches:
   only:
-    - master
+    - main
 
 env:
   global:

@@ -1,8 +1,8 @@
 # go-isatty
 
 [![Godoc Reference](https://godoc.org/github.com/mattn/go-isatty?status.svg)](http://godoc.org/github.com/mattn/go-isatty)
-[![Codecov](https://codecov.io/gh/mattn/go-isatty/branch/master/graph/badge.svg)](https://codecov.io/gh/mattn/go-isatty)
-[![Coverage Status](https://coveralls.io/repos/github/mattn/go-isatty/badge.svg?branch=master)](https://coveralls.io/github/mattn/go-isatty?branch=master)
+[![Codecov](https://codecov.io/gh/mattn/go-isatty/branch/main/graph/badge.svg)](https://codecov.io/gh/mattn/go-isatty)
+[![Coverage Status](https://coveralls.io/repos/github/mattn/go-isatty/badge.svg?branch=main)](https://coveralls.io/github/mattn/go-isatty?branch=main)
 [![Go Report Card](https://goreportcard.com/badge/mattn/go-isatty)](https://goreportcard.com/report/mattn/go-isatty)
 
 isatty for golang

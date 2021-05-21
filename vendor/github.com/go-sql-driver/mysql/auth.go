@@ -82,7 +82,7 @@ func getServerPubKey(name string) (pubKey *rsa.PublicKey) {
 }
 
 // Hash password using pre 4.1 (old password) method
-// https://github.com/atcurtis/mariadb/blob/master/mysys/my_rnd.c
+// https://github.com/atcurtis/mariadb/blob/main/mysys/my_rnd.c
 type myRnd struct {
 	seed1, seed2 uint32
 }

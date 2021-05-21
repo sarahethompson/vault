@@ -80,10 +80,10 @@ type EncryptionAtRest struct {
 // AwsKms specifies AWS KMS configuration details and whether Encryption at Rest is enabled for an Atlas project.
 type AwsKms struct {
 	Enabled             *bool  `json:"enabled,omitempty"`             // Specifies whether Encryption at Rest is enabled for an Atlas project, To disable Encryption at Rest, pass only this parameter with a value of false, When you disable Encryption at Rest, Atlas also removes the configuration details.
-	AccessKeyID         string `json:"accessKeyID,omitempty"`         // The IAM access key ID with permissions to access the customer master key specified by customerMasterKeyID.
-	SecretAccessKey     string `json:"secretAccessKey,omitempty"`     // The IAM secret access key with permissions to access the customer master key specified by customerMasterKeyID.
-	CustomerMasterKeyID string `json:"customerMasterKeyID,omitempty"` // The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
-	Region              string `json:"region,omitempty"`              // The AWS region in which the AWS customer master key exists: CA_CENTRAL_1, US_EAST_1, US_EAST_2, US_WEST_1, US_WEST_2, SA_EAST_1
+	AccessKeyID         string `json:"accessKeyID,omitempty"`         // The IAM access key ID with permissions to access the customer main key specified by customerMasterKeyID.
+	SecretAccessKey     string `json:"secretAccessKey,omitempty"`     // The IAM secret access key with permissions to access the customer main key specified by customerMasterKeyID.
+	CustomerMasterKeyID string `json:"customerMasterKeyID,omitempty"` // The AWS customer main key used to encrypt and decrypt the MongoDB main keys.
+	Region              string `json:"region,omitempty"`              // The AWS region in which the AWS customer main key exists: CA_CENTRAL_1, US_EAST_1, US_EAST_2, US_WEST_1, US_WEST_2, SA_EAST_1
 }
 
 // AzureKeyVault specifies Azure Key Vault configuration details and whether Encryption at Rest is enabled for an Atlas project.

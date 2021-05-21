@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/Azure/go-ansiterm"
   packages = [
     ".",
@@ -17,7 +17,7 @@
   version = "v0.4.7"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/Nvveen/Gotty"
   packages = ["."]
   revision = "cd527374f1e5bff4938207604a14f2e38a9cf512"
@@ -29,7 +29,7 @@
   version = "v2.0.0"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/containerd/continuity"
   packages = ["pathdriver"]
   revision = "3e8f2ea4b190484acb976a5b378d373429639a1a"
@@ -75,7 +75,7 @@
   version = "v1.3.0"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/lib/pq"
   packages = [
     ".",
@@ -132,19 +132,19 @@
   version = "v1.2.1"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
   revision = "d6449816ce06963d9d136eee5a56fca5b0616e7e"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/net"
   packages = ["context"]
   revision = "61147c48b25b599e5b561d2e9c4f3e1ef489ca41"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/sys"
   packages = [
     "unix",

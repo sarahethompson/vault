@@ -17,7 +17,7 @@
  */
 
 // Package connectivity defines connectivity semantics.
-// For details, see https://github.com/grpc/grpc/blob/master/doc/connectivity-semantics-and-api.md.
+// For details, see https://github.com/grpc/grpc/blob/main/doc/connectivity-semantics-and-api.md.
 // All APIs in this package are experimental.
 package connectivity
 

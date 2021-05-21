@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:6847d6b1a326b6b135f825de3de8775e93b42ed04b7dfd363db7b8c0bad2a987"
   name = "github.com/abdullin/seq"
   packages = ["."]
@@ -18,7 +18,7 @@
   version = "v1.0.8"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:ae162f9b5c46f6d5ff4bd53a3d78f72e2eb6676c11c5d33b8b106c36f87ddb31"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
@@ -34,7 +34,7 @@
   version = "v1.4.7"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:147d671753effde6d3bcd58fc74c1d67d740196c84c280c762a5417319499972"
   name = "github.com/hashicorp/hcl"
   packages = [
@@ -92,7 +92,7 @@
   version = "v1.7.4"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:3140e04675a6a91d2a20ea9d10bdadf6072085502e6def6768361260aee4b967"
   name = "github.com/mattn/go-isatty"
   packages = ["."]
@@ -108,7 +108,7 @@
   version = "v0.0.2"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:c7089cbc147665e7bf85929fe3d5c1bae8fd08eb4344f917ba988b435aa92ed4"
   name = "github.com/mitchellh/mapstructure"
   packages = ["."]
@@ -116,7 +116,7 @@
   revision = "a4e142e9c047c904fa2f1e144d9a84e6133024bc"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:6ad32168a9cdb3585e45f44b2f914b4cefb0da0c23bac8482ed56d0942090be9"
   name = "github.com/olekukonko/tablewriter"
   packages = ["."]
@@ -132,7 +132,7 @@
   version = "v1.1.0"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:df48fb76fb2a40edea0c9b3d960bc95e326660d82ff1114e1f88001f7a236b40"
   name = "github.com/pkg/errors"
   packages = ["."]
@@ -160,7 +160,7 @@
   version = "v1.5"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:810e774994adcfadeb4020a8dfe2ba0249f28016aca19f13852953c9e0560b57"
   name = "github.com/sean-/conswriter"
   packages = ["."]
@@ -168,7 +168,7 @@
   revision = "f5ae3917a627f1aab86eedaac41b153e4097e4e8"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:c8e042e524b64f3e040c0c50ed4f498a5af4a4c8ff600c1f6b0e49e69addc220"
   name = "github.com/sean-/pager"
   packages = ["."]
@@ -176,7 +176,7 @@
   revision = "666be9bf53b5257ca07b4a16227df91e104c0519"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:6ee36f2cea425916d81fdaaf983469fc18f91b3cf090cfe90fa0a9d85b8bfab7"
   name = "github.com/sean-/seed"
   packages = ["."]
@@ -203,7 +203,7 @@
   version = "v1.1.0"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:986f79b56adb90fa2dc621bea27f75548370833c3a26b9eeff4241bf5928dad1"
   name = "github.com/spf13/cobra"
   packages = [
@@ -214,7 +214,7 @@
   revision = "be77323fc05148ef091e83b3866c0d47c8e74a8b"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:104517520aab91164020ab6524a5d6b7cafc641b2e42ac6236f6ac1deac4f66a"
   name = "github.com/spf13/jwalterweatherman"
   packages = ["."]
@@ -230,7 +230,7 @@
   version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:50a17f77f59a4a904bc5d51ac6cde6c693c3ab0687e49c12bc10f974c7175ef8"
   name = "github.com/spf13/viper"
   packages = ["."]
@@ -238,7 +238,7 @@
   revision = "aafc9e6bc7b7bb53ddaa75a5ef49a17d6e654be5"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:ff7dea5ad362112e8e360ee0dbfeace7b000e93947ae1f39634e7d41daef15a1"
   name = "golang.org/x/crypto"
   packages = [
@@ -252,7 +252,7 @@
   revision = "0fcca4842a8d74bfddc2c96a073bd2a4d2a7a2e8"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:407b5f905024dd94ee08c1777fabb380fb3d380f92a7f7df2592be005337eeb3"
   name = "golang.org/x/sys"
   packages = ["unix"]
@@ -260,7 +260,7 @@
   revision = "37707fdb30a5b38865cfb95e5aab41707daec7fd"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   digest = "1:31985a0ed491dba5ba7fe92e18be008acd92ca9435ed9b35b06f3e6c00fd82cb"
   name = "golang.org/x/text"
   packages = [

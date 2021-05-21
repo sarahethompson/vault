@@ -188,7 +188,7 @@ func (s *Wrapper) HMACKeyID() string {
 	return ""
 }
 
-// Encrypt is used to encrypt the master key using the the AWS CMK.
+// Encrypt is used to encrypt the main key using the the AWS CMK.
 // This returns the ciphertext, and/or any errors from this
 // call. This should be called after s.client has been instantiated.
 func (s *Wrapper) Encrypt(ctx context.Context, plaintext, aad []byte) (blob *wrapping.EncryptedBlobInfo, err error) {

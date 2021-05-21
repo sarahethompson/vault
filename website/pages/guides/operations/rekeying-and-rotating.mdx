@@ -22,13 +22,13 @@ a secret is divided into a subset of parts such that a subset of those parts are
 needed to reconstruct the original secret. Vault makes heavy use of this
 algorithm as part of the [unsealing process](/docs/concepts/seal).
 
-When a Vault server is first initialized, Vault generates a master key and
-immediately splits this master key into a series of key shares following
-Shamir's Secret Sharing Algorithm. Vault never stores the master key, therefore,
-the only way to retrieve the master key is to have a quorum of unseal keys
+When a Vault server is first initialized, Vault generates a main key and
+immediately splits this main key into a series of key shares following
+Shamir's Secret Sharing Algorithm. Vault never stores the main key, therefore,
+the only way to retrieve the main key is to have a quorum of unseal keys
 re-generate it.
 
-The master key is used to decrypt the underlying encryption key. Vault uses the
+The main key is used to decrypt the underlying encryption key. Vault uses the
 encryption key to encrypt data at rest in a storage backend like the filesystem
 or Consul.
 
@@ -40,20 +40,20 @@ their key share.
 
 [shamir]: https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing
 
-In some cases, you may want to re-generate the master key and key shares. Here
+In some cases, you may want to re-generate the main key and key shares. Here
 are a few examples:
 
 - Someone joins or leaves the organization
 - Security wants to change the number of shares or threshold of shares
-- Compliance mandates the master key be rotated at a regular interval
+- Compliance mandates the main key be rotated at a regular interval
 
-In addition to rekeying the master key, there may be an independent desire to
+In addition to rekeying the main key, there may be an independent desire to
 rotate the underlying encryption key Vault uses to encrypt data at rest.
 
 [![Vault Rekey vs Rotate](/img/vault-rekey-vs-rotate.svg)](/img/vault-rekey-vs-rotate.svg)
 
 In Vault, _rekeying_ and _rotating_ are two separate operations. The process for
-generating a new master key and applying Shamir's algorithm is called
+generating a new main key and applying Shamir's algorithm is called
 "rekeying". The process for generating a new encryption key for Vault to encrypt
 data at rest is called "rotating".
 
@@ -114,7 +114,7 @@ securely distribute the above keys. When the vault is re-sealed,
 restarted, or stopped, you must provide at least 2 of these keys
 to unseal it again.
 
-Vault does not store the master key. Without at least 2 keys,
+Vault does not store the main key. Without at least 2 keys,
 your vault will remain permanently sealed.
 ```
 

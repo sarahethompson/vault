@@ -18,7 +18,7 @@ var (
 	logger = logging.NewVaultLogger(log.Trace)
 )
 
-// mockBarrier returns a physical backend, security barrier, and master key
+// mockBarrier returns a physical backend, security barrier, and main key
 func mockBarrier(t testing.TB) (physical.Backend, SecurityBarrier, []byte) {
 	inm, err := inmem.NewInmem(nil, logger)
 	if err != nil {
@@ -124,9 +124,9 @@ func TestAESGCMBarrier_BackwardsCompatible(t *testing.T) {
 	}
 	buf, _ := json.Marshal(init)
 
-	// Protect with master key
-	master, _ := b.GenerateKey(rand.Reader)
-	gcm, _ := b.aeadFromKey(master)
+	// Protect with main key
+	main, _ := b.GenerateKey(rand.Reader)
+	gcm, _ := b.aeadFromKey(main)
 	value, err := b.encrypt(barrierInitPath, initialKeyTerm, gcm, buf)
 	if err != nil {
 		t.Fatal(err)
@@ -161,7 +161,7 @@ func TestAESGCMBarrier_BackwardsCompatible(t *testing.T) {
 	}
 
 	// Unseal should work and migrate online
-	err = b.Unseal(context.Background(), master)
+	err = b.Unseal(context.Background(), main)
 	if err != nil {
 		t.Fatalf("err: %v", err)
 	}

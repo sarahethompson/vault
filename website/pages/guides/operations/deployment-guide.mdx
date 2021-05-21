@@ -238,7 +238,7 @@ The following parameters are set for the `tcp` listener stanza:
 
 This is an **ENTERPRISE** feature.
 
-If you are deploying [Vault Enterprise](https://www.hashicorp.com/products/vault), you can include `seal` stanza configuration to specify the seal type to use for additional data protection, such as using HSM or Cloud KMS solutions to encrypt and decrypt the Vault master key. This stanza is optional, and if this is not configured, Vault will use the Shamir algorithm to cryptographically split the master key.
+If you are deploying [Vault Enterprise](https://www.hashicorp.com/products/vault), you can include `seal` stanza configuration to specify the seal type to use for additional data protection, such as using HSM or Cloud KMS solutions to encrypt and decrypt the Vault main key. This stanza is optional, and if this is not configured, Vault will use the Shamir algorithm to cryptographically split the main key.
 
 If you are deploying Vault Enterprise, you should review the [seal configuration section](/docs/configuration/seal) of our documentation.
 

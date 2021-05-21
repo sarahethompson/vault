@@ -39,7 +39,7 @@ func PrepareTestContainer(t *testing.T, version string) (cleanup func(), retAddr
 		}
 	}
 	if strings.HasPrefix(version, "1.3") {
-		config = `datacenter = "test" acl_default_policy = "deny" acl_datacenter = "test" acl_master_token = "test"`
+		config = `datacenter = "test" acl_default_policy = "deny" acl_datacenter = "test" acl_main_token = "test"`
 	}
 
 	dockerOptions := &dockertest.RunOptions{

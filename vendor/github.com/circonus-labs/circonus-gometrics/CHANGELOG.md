@@ -18,7 +18,7 @@
 
 # v2.2.5
 
-* upd: switch from tracking master to versions for retryablehttp and circonusllhist now that both repositories are doing releases
+* upd: switch from tracking main to versions for retryablehttp and circonusllhist now that both repositories are doing releases
 
 # v2.2.4
 

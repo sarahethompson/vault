@@ -24,7 +24,7 @@ const (
 )
 
 // TTL is metadata that specifies number of hops a tag can propagate.
-// Details about TTL metadata is specified at https://github.com/census-instrumentation/opencensus-specs/blob/master/tags/TagMap.md#tagmetadata
+// Details about TTL metadata is specified at https://github.com/census-instrumentation/opencensus-specs/blob/main/tags/TagMap.md#tagmetadata
 type TTL struct {
 	ttl int
 }

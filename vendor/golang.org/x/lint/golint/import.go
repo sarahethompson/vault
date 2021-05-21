@@ -3,7 +3,7 @@ package main
 /*
 
 This file holds a direct copy of the import path matching code of
-https://github.com/golang/go/blob/master/src/cmd/go/main.go. It can be
+https://github.com/golang/go/blob/main/src/cmd/go/main.go. It can be
 replaced when https://golang.org/issue/8768 is resolved.
 
 It has been updated to follow upstream changes in a few ways.

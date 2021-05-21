@@ -222,7 +222,7 @@ func (cn *conn) handlePgpass(o values) {
 	port := o["port"]
 	db := o["dbname"]
 	username := o["user"]
-	// From: https://github.com/tg/pgpass/blob/master/reader.go
+	// From: https://github.com/tg/pgpass/blob/main/reader.go
 	getFields := func(s string) []string {
 		fs := make([]string, 0, 5)
 		f := make([]rune, 0, len(s))

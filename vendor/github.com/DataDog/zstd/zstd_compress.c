@@ -2766,7 +2766,7 @@ static size_t ZSTD_checkDictNCount(short* normalizedCounter, unsigned dictMaxSym
 
 /* Dictionary format :
  * See :
- * https://github.com/facebook/zstd/blob/master/doc/zstd_compression_format.md#dictionary-format
+ * https://github.com/facebook/zstd/blob/main/doc/zstd_compression_format.md#dictionary-format
  */
 /*! ZSTD_loadZstdDictionary() :
  * @return : dictID, or an error code

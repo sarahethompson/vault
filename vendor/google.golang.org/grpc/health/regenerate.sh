@@ -24,7 +24,7 @@ trap finish EXIT
 
 pushd "$TMP"
 mkdir -p grpc/health/v1
-curl https://raw.githubusercontent.com/grpc/grpc-proto/master/grpc/health/v1/health.proto > grpc/health/v1/health.proto
+curl https://raw.githubusercontent.com/grpc/grpc-proto/main/grpc/health/v1/health.proto > grpc/health/v1/health.proto
 
 protoc --go_out=plugins=grpc,paths=source_relative:. -I. grpc/health/v1/*.proto
 popd

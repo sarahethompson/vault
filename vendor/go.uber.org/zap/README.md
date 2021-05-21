@@ -125,10 +125,10 @@ pinned in the [benchmarks/go.mod][] file. [↩](#anchor-versions)
 
 [doc-img]: https://godoc.org/go.uber.org/zap?status.svg
 [doc]: https://godoc.org/go.uber.org/zap
-[ci-img]: https://travis-ci.com/uber-go/zap.svg?branch=master
+[ci-img]: https://travis-ci.com/uber-go/zap.svg?branch=main
 [ci]: https://travis-ci.com/uber-go/zap
-[cov-img]: https://codecov.io/gh/uber-go/zap/branch/master/graph/badge.svg
+[cov-img]: https://codecov.io/gh/uber-go/zap/branch/main/graph/badge.svg
 [cov]: https://codecov.io/gh/uber-go/zap
-[benchmarking suite]: https://github.com/uber-go/zap/tree/master/benchmarks
-[benchmarks/go.mod]: https://github.com/uber-go/zap/blob/master/benchmarks/go.mod
+[benchmarking suite]: https://github.com/uber-go/zap/tree/main/benchmarks
+[benchmarks/go.mod]: https://github.com/uber-go/zap/blob/main/benchmarks/go.mod
 

@@ -796,11 +796,11 @@ func (c *msgpackSpecRpcCodec) parseCustomHeader(expectTypeByte byte, msgid *uint
 //--------------------------------------------------
 
 // msgpackSpecRpc is the implementation of Rpc that uses custom communication protocol
-// as defined in the msgpack spec at https://github.com/msgpack-rpc/msgpack-rpc/blob/master/spec.md
+// as defined in the msgpack spec at https://github.com/msgpack-rpc/msgpack-rpc/blob/main/spec.md
 type msgpackSpecRpc struct{}
 
 // MsgpackSpecRpc implements Rpc using the communication protocol defined in
-// the msgpack spec at https://github.com/msgpack-rpc/msgpack-rpc/blob/master/spec.md .
+// the msgpack spec at https://github.com/msgpack-rpc/msgpack-rpc/blob/main/spec.md .
 // Its methods (ServerCodec and ClientCodec) return values that implement RpcCodecBuffered.
 var MsgpackSpecRpc msgpackSpecRpc
 

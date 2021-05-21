@@ -19,6 +19,6 @@ SelectableCardContainer components are used to hold SelectableCard components.  
 **See**
 
 - [Uses of SelectableCardContainer](https://github.com/hashicorp/vault/search?l=Handlebars&q=SelectableCardContainer+OR+selectable-card-container)
-- [SelectableCardContainer Source Code](https://github.com/hashicorp/vault/blob/master/ui/app/components/selectable-card-container.js)
+- [SelectableCardContainer Source Code](https://github.com/hashicorp/vault/blob/main/ui/app/components/selectable-card-container.js)
 
 ---

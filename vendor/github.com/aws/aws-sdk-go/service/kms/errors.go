@@ -102,7 +102,7 @@ const (
 	// "CustomKeyStoreHasCMKsException".
 	//
 	// The request was rejected because the custom key store contains AWS KMS customer
-	// master keys (CMKs). After verifying that you do not need to use the CMKs,
+	// main keys (CMKs). After verifying that you do not need to use the CMKs,
 	// use the ScheduleKeyDeletion operation to delete the CMKs. After they are
 	// deleted, you can delete the custom key store.
 	ErrCodeCustomKeyStoreHasCMKsException = "CustomKeyStoreHasCMKsException"
@@ -178,7 +178,7 @@ const (
 	//
 	// The request was rejected because the key material in the request is, expired,
 	// invalid, or is not the same key material that was previously imported into
-	// this customer master key (CMK).
+	// this customer main key (CMK).
 	ErrCodeIncorrectKeyMaterialException = "IncorrectKeyMaterialException"
 
 	// ErrCodeIncorrectTrustAnchorException for service response error code
@@ -240,7 +240,7 @@ const (
 	// "InvalidImportTokenException".
 	//
 	// The request was rejected because the provided import token is invalid or
-	// is associated with a different customer master key (CMK).
+	// is associated with a different customer main key (CMK).
 	ErrCodeInvalidImportTokenException = "InvalidImportTokenException"
 
 	// ErrCodeInvalidKeyUsageException for service response error code

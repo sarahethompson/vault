@@ -43,7 +43,7 @@ govendor fetch -v github.com/coreos/go-oidc@v2
 # Need the v3 branch for dockertest
 govendor fetch -v github.com/ory/dockertest@v3
 
-# Current influx master is alpha, pin to v1.7.3
+# Current influx main is alpha, pin to v1.7.3
 govendor fetch github.com/influxdata/influxdb/client/v2@v1.7.4
 govendor fetch github.com/influxdata/influxdb/models@v1.7.4
 govendor fetch github.com/influxdata/influxdb/pkg/escape@v1.7.4

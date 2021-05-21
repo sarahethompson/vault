@@ -57,10 +57,10 @@ Please follow these guidelines when formatting source code:
 
 To make a pull request, you will need a GitHub account; if you are unclear on this process, see GitHub's
 documentation on [forking](https://help.github.com/articles/fork-a-repo) and [pull requests](https://help.github.com/articles/using-pull-requests).
-Pull requests should be targeted at the `master` branch. Before creating a pull request, go through this checklist:
+Pull requests should be targeted at the `main` branch. Before creating a pull request, go through this checklist:
 
-1. Create a feature branch off of `master` so that changes do not get mixed up.
-1. [Rebase](http://git-scm.com/book/en/Git-Branching-Rebasing) your local changes against the `master` branch.
+1. Create a feature branch off of `main` so that changes do not get mixed up.
+1. [Rebase](http://git-scm.com/book/en/Git-Branching-Rebasing) your local changes against the `main` branch.
 1. Run the full project test suite with the `go test ./...` (or equivalent) command and confirm that it passes.
 1. Run `gofmt -s` (if the project is written in Go).
 1. Ensure that each commit has a subsystem prefix (ex: `controller: `).

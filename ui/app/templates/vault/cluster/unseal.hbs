@@ -8,7 +8,7 @@
     <AlertBanner
       @type="warning"
       @title="{{capitalize model.name}} is {{if model.unsealed 'unsealed' 'sealed'}}"
-      @message="You can unseal the vault by entering a portion of the master key. Once all portions are entered, the vault will be unsealed."
+      @message="You can unseal the vault by entering a portion of the main key. Once all portions are entered, the vault will be unsealed."
       @class="unseal-warning"
       data-test-cluster-status
     />

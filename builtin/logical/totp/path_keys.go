@@ -60,7 +60,7 @@ func pathKeys(b *backend) *framework.Path {
 
 			"key": {
 				Type:        framework.TypeString,
-				Description: "The shared master key used to generate a TOTP token. Only used if generate is false.",
+				Description: "The shared main key used to generate a TOTP token. Only used if generate is false.",
 			},
 
 			"issuer": {

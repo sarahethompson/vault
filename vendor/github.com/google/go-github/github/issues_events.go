@@ -27,11 +27,11 @@ type IssueEvent struct {
 	//       If the issue was closed by commit message, CommitID holds the SHA1 hash of the commit.
 	//
 	//     merged
-	//       The Actor merged into master a branch containing a commit mentioning the issue.
+	//       The Actor merged into main a branch containing a commit mentioning the issue.
 	//       CommitID holds the SHA1 of the merge commit.
 	//
 	//     referenced
-	//       The Actor committed to master a commit mentioning the issue in its commit message.
+	//       The Actor committed to main a commit mentioning the issue in its commit message.
 	//       CommitID holds the SHA1 of the commit.
 	//
 	//     reopened, unlocked

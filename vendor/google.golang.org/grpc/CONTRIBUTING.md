@@ -1,8 +1,8 @@
 # How to contribute
 
 We definitely welcome your patches and contributions to gRPC! Please read the gRPC
-organization's [governance rules](https://github.com/grpc/grpc-community/blob/master/governance.md)
-and [contribution guidelines](https://github.com/grpc/grpc-community/blob/master/CONTRIBUTING.md) before proceeding.
+organization's [governance rules](https://github.com/grpc/grpc-community/blob/main/governance.md)
+and [contribution guidelines](https://github.com/grpc/grpc-community/blob/main/CONTRIBUTING.md) before proceeding.
 
 If you are new to github, please start by reading [Pull Request howto](https://help.github.com/articles/about-pull-requests/)
 
@@ -43,11 +43,11 @@ How to get your contributions merged smoothly and quickly.
 
 - Maintain **clean commit history** and use **meaningful commit messages**. PRs
   with messy commit history are difficult to review and won't be merged. Use
-  `rebase -i upstream/master` to curate your commit history and/or to bring in
-  latest changes from master (but avoid rebasing in the middle of a code
+  `rebase -i upstream/main` to curate your commit history and/or to bring in
+  latest changes from main (but avoid rebasing in the middle of a code
   review).
 
-- Keep your PR up to date with upstream/master (if there are merge conflicts, we
+- Keep your PR up to date with upstream/main (if there are merge conflicts, we
   can't really merge your change).
 
 - **All tests need to be passing** before your change can be merged. We

@@ -33,7 +33,7 @@ it possible to `sort`, `filter`, `limit`, seek (via the `offset` function), or
 functions return a single string value.  See below for details.
 
 Important note: see the
-https://github.com/hashicorp/go-sockaddr/tree/master/cmd/sockaddr utility for
+https://github.com/hashicorp/go-sockaddr/tree/main/cmd/sockaddr utility for
 more examples and for a CLI utility to experiment with the template syntax.
 
 `GetAllInterfaces` - Returns an exhaustive set of IfAddr structs available on

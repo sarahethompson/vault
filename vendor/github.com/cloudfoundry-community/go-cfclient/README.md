@@ -45,7 +45,7 @@ func main() {
 
 #### Errors
 
-If the Cloud Foundry error definitions change at <https://github.com/cloudfoundry/cloud_controller_ng/blob/master/vendor/errors/v2.yml>
+If the Cloud Foundry error definitions change at <https://github.com/cloudfoundry/cloud_controller_ng/blob/main/vendor/errors/v2.yml>
 then the error predicate functions in this package need to be regenerated.
 
 To do this, simply use Go to regenerate the code:

@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/mitchellh/iochan"
   packages = ["."]
   revision = "87b45ffd0e9581375c491fef3d32130bb15c5bd7"

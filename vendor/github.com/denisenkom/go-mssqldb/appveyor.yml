@@ -40,7 +40,7 @@ before_test:
       $instanceName = $env:SQLINSTANCE
       Start-Service "MSSQL`$$instanceName"
       Start-Service "SQLBrowser"
-  - sqlcmd -S "(local)\%SQLINSTANCE%" -Q "Use [master]; CREATE DATABASE test;"
+  - sqlcmd -S "(local)\%SQLINSTANCE%" -Q "Use [main]; CREATE DATABASE test;"
   - sqlcmd -S "(local)\%SQLINSTANCE%" -h -1 -Q "set nocount on; Select @@version"
   - pip install codecov
  

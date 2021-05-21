@@ -2097,13 +2097,13 @@ func NewContainerServiceListResultPage(getNextPage func(context.Context, Contain
 	return ContainerServiceListResultPage{fn: getNextPage}
 }
 
-// ContainerServiceMasterProfile profile for the container service master.
+// ContainerServiceMasterProfile profile for the container service main.
 type ContainerServiceMasterProfile struct {
-	// Count - Number of masters (VMs) in the container service cluster. Allowed values are 1, 3, and 5. The default value is 1.
+	// Count - Number of mains (VMs) in the container service cluster. Allowed values are 1, 3, and 5. The default value is 1.
 	Count *int32 `json:"count,omitempty"`
-	// DNSPrefix - DNS prefix to be used to create the FQDN for master.
+	// DNSPrefix - DNS prefix to be used to create the FQDN for main.
 	DNSPrefix *string `json:"dnsPrefix,omitempty"`
-	// Fqdn - READ-ONLY; FQDN for the master.
+	// Fqdn - READ-ONLY; FQDN for the main.
 	Fqdn *string `json:"fqdn,omitempty"`
 }
 
@@ -2123,8 +2123,8 @@ type ContainerServiceProperties struct {
 	CustomProfile *ContainerServiceCustomProfile `json:"customProfile,omitempty"`
 	// ServicePrincipalProfile - Properties for cluster service principals.
 	ServicePrincipalProfile *ContainerServiceServicePrincipalProfile `json:"servicePrincipalProfile,omitempty"`
-	// MasterProfile - Properties of master agents.
-	MasterProfile *ContainerServiceMasterProfile `json:"masterProfile,omitempty"`
+	// MasterProfile - Properties of main agents.
+	MasterProfile *ContainerServiceMasterProfile `json:"mainProfile,omitempty"`
 	// AgentPoolProfiles - Properties of the agent pool.
 	AgentPoolProfiles *[]ContainerServiceAgentPoolProfile `json:"agentPoolProfiles,omitempty"`
 	// WindowsProfile - Properties of Windows VMs.
