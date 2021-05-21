@@ -232,7 +232,7 @@ type PolicyConfig struct {
 	// The type of key
 	Type KeyType
 
-	// Derived keys MUST provide a context and the master underlying key is
+	// Derived keys MUST provide a context and the main underlying key is
 	// never used.
 	Derived              bool
 	KDF                  int
@@ -315,7 +315,7 @@ type Policy struct {
 	Key  []byte      `json:"key,omitempty"` //DEPRECATED
 	Keys keyEntryMap `json:"keys"`
 
-	// Derived keys MUST provide a context and the master underlying key is
+	// Derived keys MUST provide a context and the main underlying key is
 	// never used. If convergent encryption is true, the context will be used
 	// as the nonce as well.
 	Derived              bool `json:"derived"`

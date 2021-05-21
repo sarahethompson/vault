@@ -5,5 +5,5 @@ go:
 
 branches:
   only:
-    - master
+    - main
 

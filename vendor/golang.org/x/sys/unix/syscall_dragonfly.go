@@ -17,7 +17,7 @@ import (
 	"unsafe"
 )
 
-// See version list in https://github.com/DragonFlyBSD/DragonFlyBSD/blob/master/sys/sys/param.h
+// See version list in https://github.com/DragonFlyBSD/DragonFlyBSD/blob/main/sys/sys/param.h
 var (
 	osreldateOnce sync.Once
 	osreldate     uint32

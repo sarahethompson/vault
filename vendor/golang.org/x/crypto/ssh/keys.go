@@ -1273,7 +1273,7 @@ type openSSHDecryptFunc func(CipherName, KdfName, KdfOpts string, PrivKeyBlock [
 // parseOpenSSHPrivateKey parses an OpenSSH private key, using the decrypt
 // function to unwrap the encrypted portion. unencryptedOpenSSHKey can be used
 // as the decrypt function to parse an unencrypted private key. See
-// https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.key.
+// https://github.com/openssh/openssh-portable/blob/main/PROTOCOL.key.
 func parseOpenSSHPrivateKey(key []byte, decrypt openSSHDecryptFunc) (crypto.PrivateKey, error) {
 	const magic = "openssh-key-v1\x00"
 	if len(key) < len(magic) || string(key[:len(magic)]) != magic {
@@ -1327,7 +1327,7 @@ func parseOpenSSHPrivateKey(key []byte, decrypt openSSHDecryptFunc) (crypto.Priv
 
 	switch pk1.Keytype {
 	case KeyAlgoRSA:
-		// https://github.com/openssh/openssh-portable/blob/master/sshkey.c#L2760-L2773
+		// https://github.com/openssh/openssh-portable/blob/main/sshkey.c#L2760-L2773
 		key := struct {
 			N       *big.Int
 			E       *big.Int

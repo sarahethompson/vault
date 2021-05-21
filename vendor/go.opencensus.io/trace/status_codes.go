@@ -15,7 +15,7 @@
 package trace
 
 // Status codes for use with Span.SetStatus. These correspond to the status
-// codes used by gRPC defined here: https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+// codes used by gRPC defined here: https://github.com/googleapis/googleapis/blob/main/google/rpc/code.proto
 const (
 	StatusCodeOK                 = 0
 	StatusCodeCancelled          = 1

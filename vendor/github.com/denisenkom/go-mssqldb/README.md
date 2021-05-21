@@ -2,7 +2,7 @@
 
 [![GoDoc](https://godoc.org/github.com/denisenkom/go-mssqldb?status.svg)](http://godoc.org/github.com/denisenkom/go-mssqldb)
 [![Build status](https://ci.appveyor.com/api/projects/status/jrln8cs62wj9i0a2?svg=true)](https://ci.appveyor.com/project/denisenkom/go-mssqldb)
-[![codecov](https://codecov.io/gh/denisenkom/go-mssqldb/branch/master/graph/badge.svg)](https://codecov.io/gh/denisenkom/go-mssqldb)
+[![codecov](https://codecov.io/gh/denisenkom/go-mssqldb/branch/main/graph/badge.svg)](https://codecov.io/gh/denisenkom/go-mssqldb)
 
 ## Install
 
@@ -66,9 +66,9 @@ Other supported formats are listed below.
 
   * `sqlserver://username:password@host/instance?param1=value&param2=value`
   * `sqlserver://username:password@host:port?param1=value&param2=value`
-  * `sqlserver://sa@localhost/SQLExpress?database=master&connection+timeout=30` // `SQLExpress instance.
-  * `sqlserver://sa:mypass@localhost?database=master&connection+timeout=30`     // username=sa, password=mypass.
-  * `sqlserver://sa:mypass@localhost:1234?database=master&connection+timeout=30` // port 1234 on localhost.
+  * `sqlserver://sa@localhost/SQLExpress?database=main&connection+timeout=30` // `SQLExpress instance.
+  * `sqlserver://sa:mypass@localhost?database=main&connection+timeout=30`     // username=sa, password=mypass.
+  * `sqlserver://sa:mypass@localhost:1234?database=main&connection+timeout=30` // port 1234 on localhost.
   * `sqlserver://sa:my%7Bpass@somehost?connection+timeout=30` // password is "my{pass"
 
   A string of this format can be constructed using the `URL` type in the `net/url` package.
@@ -90,14 +90,14 @@ Other supported formats are listed below.
 2. ADO: `key=value` pairs separated by `;`. Values may not contain `;`, leading and trailing whitespace is ignored.
      Examples:
 	
-  * `server=localhost\\SQLExpress;user id=sa;database=master;app name=MyAppName`
-  * `server=localhost;user id=sa;database=master;app name=MyAppName`
+  * `server=localhost\\SQLExpress;user id=sa;database=main;app name=MyAppName`
+  * `server=localhost;user id=sa;database=main;app name=MyAppName`
 
 3. ODBC: Prefix with `odbc`, `key=value` pairs separated by `;`. Allow `;` by wrapping
     values in `{}`. Examples:
 	
-  * `odbc:server=localhost\\SQLExpress;user id=sa;database=master;app name=MyAppName`
-  * `odbc:server=localhost;user id=sa;database=master;app name=MyAppName`
+  * `odbc:server=localhost\\SQLExpress;user id=sa;database=main;app name=MyAppName`
+  * `odbc:server=localhost;user id=sa;database=main;app name=MyAppName`
   * `odbc:server=localhost;user id=sa;password={foo;bar}` // Value marked with `{}`, password is "foo;bar"
   * `odbc:server=localhost;user id=sa;password={foo{bar}` // Value marked with `{}`, password is "foo{bar"
   * `odbc:server=localhost;user id=sa;password={foobar }` // Value marked with `{}`, password is "foobar "

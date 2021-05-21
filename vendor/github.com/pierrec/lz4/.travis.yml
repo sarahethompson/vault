@@ -8,12 +8,12 @@ go:
   - 1.10.x
   - 1.11.x
   - 1.12.x
-  - master
+  - main
 
 matrix:
  fast_finish: true
  allow_failures:
-   - go: master
+   - go: main
 
 sudo: false
 

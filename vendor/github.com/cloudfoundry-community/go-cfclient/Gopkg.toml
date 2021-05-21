@@ -1,7 +1,7 @@
 
 # Gopkg.toml example
 #
-# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
+# Refer to https://github.com/golang/dep/blob/main/docs/Gopkg.toml.md
 # for detailed Gopkg.toml documentation.
 #
 # required = ["github.com/user/thing/cmd/thing"]
@@ -26,7 +26,7 @@
   version = "1.0.0"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/martini-contrib/render"
 
 [[constraint]]
@@ -42,11 +42,11 @@
   version = "1.6.3"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/net"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/oauth2"
 
 [[constraint]]

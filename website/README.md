@@ -124,7 +124,7 @@ changed _only after a release_.
 
 The `data/version.js` also contains a global variable, `CHANGELOG_URL`, that
 should be updated to point to the latest changelog URL for the particular
-release version. The URL should be based off the `master` blob such that
+release version. The URL should be based off the `main` blob such that
 it always reflects the most up-to-date changes.
 
 ### Displaying a Prerelease
@@ -172,11 +172,11 @@ couple instances of custom syntax, and a couple specific pitfalls that are not
 present by default with markdown, detailed below:
 
 - If you see the symbols `~>`, `->`, `=>`, or `!>`, these represent [custom
-  alerts](https://github.com/hashicorp/remark-plugins/tree/master/plugins/paragraph-custom-alerts#paragraph-custom-alerts).
+  alerts](https://github.com/hashicorp/remark-plugins/tree/main/plugins/paragraph-custom-alerts#paragraph-custom-alerts).
   These render as colored boxes to draw the user's attention to some type of
   aside.
 - If you see `@include '/some/path.mdx'`, this is a [markdown
-  include](https://github.com/hashicorp/remark-plugins/tree/master/plugins/include-markdown#include-markdown-plugin).
+  include](https://github.com/hashicorp/remark-plugins/tree/main/plugins/include-markdown#include-markdown-plugin).
   It's worth noting as well that all includes resolve from
   `website/pages/partials` by default.
 
@@ -332,7 +332,7 @@ future!
 
 We support the following browsers targeting roughly the versions specified.
 
-| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_24x24.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_24x24.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_24x24.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_24x24.png) | ![Internet Explorer](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_24x24.png) |
+| ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_24x24.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_24x24.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_24x24.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_24x24.png) | ![Internet Explorer](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_24x24.png) |
 | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | **Latest**                                                                                          | **Latest**                                                                                             | **Latest**                                                                                       | **Latest**                                                                                          | **11+**                                                                                                    |
 

@@ -123,7 +123,7 @@ function main() {
   ${REALM_NAME} = {
     kdc = localhost
     admin_server = localhost
-    master_kdc = localhost
+    main_kdc = localhost
     default_domain = localhost
   }
 " > ${TESTS_DIR}/integration/krb5.conf

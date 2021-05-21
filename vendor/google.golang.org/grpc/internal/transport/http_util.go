@@ -48,7 +48,7 @@ const (
 	// baseContentType is the base content-type for gRPC.  This is a valid
 	// content-type on it's own, but can also include a content-subtype such as
 	// "proto" as a suffix after "+" or ";".  See
-	// https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md#requests
+	// https://github.com/grpc/grpc/blob/main/doc/PROTOCOL-HTTP2.md#requests
 	// for more details.
 	baseContentType = "application/grpc"
 )
@@ -186,7 +186,7 @@ func isWhitelistedHeader(hdr string) bool {
 // given content-type must be a valid content-type that starts with
 // "application/grpc". A content-subtype will follow "application/grpc" after a
 // "+" or ";". See
-// https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md#requests for
+// https://github.com/grpc/grpc/blob/main/doc/PROTOCOL-HTTP2.md#requests for
 // more details.
 //
 // If contentType is not a valid content-type for gRPC, the boolean

@@ -243,7 +243,7 @@ func (m *MSSQL) revokeUserDefault(ctx context.Context, username string) error {
 	// we need to drop the database users before we can drop the login and the role
 	// This isn't done in a transaction because even if we fail along the way,
 	// we want to remove as much access as possible
-	stmt, err := db.PrepareContext(ctx, "EXEC master.dbo.sp_msloginmappings @p1;")
+	stmt, err := db.PrepareContext(ctx, "EXEC main.dbo.sp_msloginmappings @p1;")
 	if err != nil {
 		return err
 	}
@@ -379,7 +379,7 @@ func (m *MSSQL) SetCredentials(ctx context.Context, statements dbplugin.Statemen
 
 	var exists bool
 
-	err = db.QueryRowContext(ctx, "SELECT 1 FROM master.sys.server_principals where name = N'$1'", username).Scan(&exists)
+	err = db.QueryRowContext(ctx, "SELECT 1 FROM main.sys.server_principals where name = N'$1'", username).Scan(&exists)
 
 	if err != nil && err != sql.ErrNoRows {
 		return "", "", err
@@ -435,7 +435,7 @@ END
 const dropLoginSQL = `
 IF EXISTS
   (SELECT name
-   FROM master.sys.server_principals
+   FROM main.sys.server_principals
    WHERE name = N'%s')
 BEGIN
   DROP LOGIN [%s]

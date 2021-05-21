@@ -330,7 +330,7 @@ func (r *Realm) parseLines(name string, lines []string) (err error) {
 	var adminServerFinal bool
 	var KDCFinal bool
 	var kpasswdServerFinal bool
-	var masterKDCFinal bool
+	var mainKDCFinal bool
 	var ignore bool
 	var c int // counts the depth of blocks within brackets { }
 	for _, line := range lines {
@@ -392,8 +392,8 @@ func (r *Realm) parseLines(name string, lines []string) (err error) {
 			appendUntilFinal(&r.KDC, v, &KDCFinal)
 		case "kpasswd_server":
 			appendUntilFinal(&r.KPasswdServer, v, &kpasswdServerFinal)
-		case "master_kdc":
-			appendUntilFinal(&r.MasterKDC, v, &masterKDCFinal)
+		case "main_kdc":
+			appendUntilFinal(&r.MasterKDC, v, &mainKDCFinal)
 		default:
 			//Ignore the line
 			continue

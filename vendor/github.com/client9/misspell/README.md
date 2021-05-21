@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/client9/misspell.svg?branch=master)](https://travis-ci.org/client9/misspell) [![Go Report Card](https://goreportcard.com/badge/github.com/client9/misspell)](https://goreportcard.com/report/github.com/client9/misspell) [![GoDoc](https://godoc.org/github.com/client9/misspell?status.svg)](https://godoc.org/github.com/client9/misspell) [![Coverage](http://gocover.io/_badge/github.com/client9/misspell)](http://gocover.io/github.com/client9/misspell) [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/client9/misspell/master/LICENSE)
+[![Build Status](https://travis-ci.org/client9/misspell.svg?branch=main)](https://travis-ci.org/client9/misspell) [![Go Report Card](https://goreportcard.com/badge/github.com/client9/misspell)](https://goreportcard.com/report/github.com/client9/misspell) [![GoDoc](https://godoc.org/github.com/client9/misspell?status.svg)](https://godoc.org/github.com/client9/misspell) [![Coverage](http://gocover.io/_badge/github.com/client9/misspell)](http://gocover.io/github.com/client9/misspell) [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/client9/misspell/main/LICENSE)
 
 Correct commonly misspelled English words... quickly.
 
@@ -379,10 +379,10 @@ can check your code using [golint](https://github.com/golang/lint)
 <a name="license"></a>
 ### What license is this?
 
-The main code is [MIT](https://github.com/client9/misspell/blob/master/LICENSE).
+The main code is [MIT](https://github.com/client9/misspell/blob/main/LICENSE).
 
 Misspell also makes uses of the Golang standard library and contains a modified version of Golang's [strings.Replacer](https://golang.org/pkg/strings/#Replacer)
-which are covered under a [BSD License](https://github.com/golang/go/blob/master/LICENSE).  Type `misspell -legal` for more details or see [legal.go](https://github.com/client9/misspell/blob/master/legal.go)
+which are covered under a [BSD License](https://github.com/golang/go/blob/main/LICENSE).  Type `misspell -legal` for more details or see [legal.go](https://github.com/client9/misspell/blob/main/legal.go)
 
 <a name="words"></a>
 ### Where do the word lists come from?

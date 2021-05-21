@@ -120,7 +120,7 @@ func (wce WriteConcernError) Retryable() bool {
 			return true
 		}
 	}
-	if strings.Contains(wce.Message, "not master") || strings.Contains(wce.Message, "node is recovering") {
+	if strings.Contains(wce.Message, "not main") || strings.Contains(wce.Message, "node is recovering") {
 		return true
 	}
 
@@ -147,14 +147,14 @@ func (wce WriteConcernError) NodeIsShuttingDown() bool {
 	return strings.Contains(wce.Message, "node is shutting down")
 }
 
-// NotMaster returns true if this error is a not master error.
+// NotMaster returns true if this error is a not main error.
 func (wce WriteConcernError) NotMaster() bool {
 	for _, code := range notMasterCodes {
 		if wce.Code == int64(code) {
 			return true
 		}
 	}
-	return strings.Contains(wce.Message, "not master")
+	return strings.Contains(wce.Message, "not main")
 }
 
 // WriteError is a non-write concern failure that occurred as a result of a write
@@ -230,7 +230,7 @@ func (e Error) Retryable() bool {
 			return true
 		}
 	}
-	if strings.Contains(e.Message, "not master") || strings.Contains(e.Message, "node is recovering") {
+	if strings.Contains(e.Message, "not main") || strings.Contains(e.Message, "node is recovering") {
 		return true
 	}
 
@@ -267,14 +267,14 @@ func (e Error) NodeIsShuttingDown() bool {
 	return strings.Contains(e.Message, "node is shutting down")
 }
 
-// NotMaster returns true if this error is a not master error.
+// NotMaster returns true if this error is a not main error.
 func (e Error) NotMaster() bool {
 	for _, code := range notMasterCodes {
 		if e.Code == code {
 			return true
 		}
 	}
-	return strings.Contains(e.Message, "not master")
+	return strings.Contains(e.Message, "not main")
 }
 
 // NamespaceNotFound returns true if this errors is a NamespaceNotFound error.

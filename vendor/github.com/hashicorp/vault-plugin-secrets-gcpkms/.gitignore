@@ -1,4 +1,4 @@
-.vault-master/
+.vault-main/
 bin/*
 pkg/*
 test/service-account.json

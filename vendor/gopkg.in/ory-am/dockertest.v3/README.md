@@ -1,6 +1,6 @@
 <h1 align="center"><img src="./docs/images/banner_dockertest.png" alt="ORY Dockertest"></h1>
 
-[![Build Status](https://travis-ci.org/ory/dockertest.svg)](https://travis-ci.org/ory/dockertest?branch=master)
+[![Build Status](https://travis-ci.org/ory/dockertest.svg)](https://travis-ci.org/ory/dockertest?branch=main)
 [![Coverage Status](https://coveralls.io/repos/github/ory/dockertest/badge.svg?branch=v3)](https://coveralls.io/github/ory/dockertest?branch=v3)
 
 Use Docker to run your Go language integration tests against third party services on **Microsoft Windows, Mac OSX and Linux**!

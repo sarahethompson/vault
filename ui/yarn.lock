@@ -5733,9 +5733,9 @@ concat-stream@^1.5.0:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-config-master@^3.1.0:
+config-main@^3.1.0:
   version "3.1.0"
-  resolved "https://registry.yarnpkg.com/config-master/-/config-master-3.1.0.tgz#667663590505a283bf26a484d68489d74c5485da"
+  resolved "https://registry.yarnpkg.com/config-main/-/config-main-3.1.0.tgz#667663590505a283bf26a484d68489d74c5485da"
   integrity sha1-ZnZjWQUFooO/JqSE1oSJ10xUhdo=
   dependencies:
     walk-back "^2.0.1"
@@ -10841,7 +10841,7 @@ jsdoc-to-markdown@^5.0.0:
   dependencies:
     array-back "^4.0.1"
     command-line-tool "^0.8.0"
-    config-master "^3.1.0"
+    config-main "^3.1.0"
     dmd "^4.0.5"
     jsdoc-api "^5.0.4"
     jsdoc-parse "^4.0.1"

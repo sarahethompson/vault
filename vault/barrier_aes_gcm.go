@@ -88,7 +88,7 @@ func NewAESGCMBarrier(physical physical.Backend) (*AESGCMBarrier, error) {
 }
 
 // Initialized checks if the barrier has been initialized
-// and has a master key set.
+// and has a main key set.
 func (b *AESGCMBarrier) Initialized(ctx context.Context) (bool, error) {
 	if b.initialized.Load() {
 		return true, nil
@@ -114,7 +114,7 @@ func (b *AESGCMBarrier) Initialized(ctx context.Context) (bool, error) {
 }
 
 // Initialize works only if the barrier has not been initialized
-// and makes use of the given master key.
+// and makes use of the given main key.
 func (b *AESGCMBarrier) Initialize(ctx context.Context, key, sealKey []byte, reader io.Reader) error {
 	// Verify the key size
 	min, max := b.KeyLength()
@@ -171,7 +171,7 @@ func (b *AESGCMBarrier) Initialize(ctx context.Context, key, sealKey []byte, rea
 }
 
 // persistKeyring is used to write out the keyring using the
-// master key to encrypt it.
+// main key to encrypt it.
 func (b *AESGCMBarrier) persistKeyring(ctx context.Context, keyring *Keyring) error {
 	// Create the keyring entry
 	keyringBuf, err := keyring.Serialize()
@@ -201,7 +201,7 @@ func (b *AESGCMBarrier) persistKeyring(ctx context.Context, keyring *Keyring) er
 		return errwrap.Wrapf("failed to persist keyring: {{err}}", err)
 	}
 
-	// Serialize the master key value
+	// Serialize the main key value
 	key := &Key{
 		Term:    1,
 		Version: 1,
@@ -210,27 +210,27 @@ func (b *AESGCMBarrier) persistKeyring(ctx context.Context, keyring *Keyring) er
 	keyBuf, err := key.Serialize()
 	defer memzero(keyBuf)
 	if err != nil {
-		return errwrap.Wrapf("failed to serialize master key: {{err}}", err)
+		return errwrap.Wrapf("failed to serialize main key: {{err}}", err)
 	}
 
-	// Encrypt the master key
+	// Encrypt the main key
 	activeKey := keyring.ActiveKey()
 	aead, err := b.aeadFromKey(activeKey.Value)
 	if err != nil {
 		return err
 	}
-	value, err = b.encrypt(masterKeyPath, activeKey.Term, aead, keyBuf)
+	value, err = b.encrypt(mainKeyPath, activeKey.Term, aead, keyBuf)
 	if err != nil {
 		return err
 	}
 
-	// Update the masterKeyPath for standby instances
+	// Update the mainKeyPath for standby instances
 	pe = &physical.Entry{
-		Key:   masterKeyPath,
+		Key:   mainKeyPath,
 		Value: value,
 	}
 	if err := b.backend.Put(ctx, pe); err != nil {
-		return errwrap.Wrapf("failed to persist master key: {{err}}", err)
+		return errwrap.Wrapf("failed to persist main key: {{err}}", err)
 	}
 	return nil
 }
@@ -258,7 +258,7 @@ func (b *AESGCMBarrier) Sealed() (bool, error) {
 	return sealed, nil
 }
 
-// VerifyMaster is used to check if the given key matches the master key
+// VerifyMaster is used to check if the given key matches the main key
 func (b *AESGCMBarrier) VerifyMaster(key []byte) error {
 	b.l.RLock()
 	defer b.l.RUnlock()
@@ -324,19 +324,19 @@ func (b *AESGCMBarrier) ReloadKeyring(ctx context.Context) error {
 	return nil
 }
 
-// ReloadMasterKey is used to re-read the underlying masterkey.
-// This is used for HA deployments to ensure the latest master key
+// ReloadMasterKey is used to re-read the underlying mainkey.
+// This is used for HA deployments to ensure the latest main key
 // is available for keyring reloading.
 func (b *AESGCMBarrier) ReloadMasterKey(ctx context.Context) error {
-	// Read the masterKeyPath upgrade
-	out, err := b.Get(ctx, masterKeyPath)
+	// Read the mainKeyPath upgrade
+	out, err := b.Get(ctx, mainKeyPath)
 	if err != nil {
-		return errwrap.Wrapf("failed to read master key path: {{err}}", err)
+		return errwrap.Wrapf("failed to read main key path: {{err}}", err)
 	}
 
-	// The masterKeyPath could be missing (backwards incompatible),
+	// The mainKeyPath could be missing (backwards incompatible),
 	// we can ignore this and attempt to make progress with the current
-	// master key.
+	// main key.
 	if out == nil {
 		return nil
 	}
@@ -345,35 +345,35 @@ func (b *AESGCMBarrier) ReloadMasterKey(ctx context.Context) error {
 	b.l.Lock()
 	defer b.l.Unlock()
 
-	out, err = b.lockSwitchedGet(ctx, masterKeyPath, false)
+	out, err = b.lockSwitchedGet(ctx, mainKeyPath, false)
 	if err != nil {
-		return errwrap.Wrapf("failed to read master key path: {{err}}", err)
+		return errwrap.Wrapf("failed to read main key path: {{err}}", err)
 	}
 
 	if out == nil {
 		return nil
 	}
 
-	// Deserialize the master key
+	// Deserialize the main key
 	key, err := DeserializeKey(out.Value)
 	memzero(out.Value)
 	if err != nil {
 		return errwrap.Wrapf("failed to deserialize key: {{err}}", err)
 	}
 
-	// Check if the master key is the same
+	// Check if the main key is the same
 	if subtle.ConstantTimeCompare(b.keyring.MasterKey(), key.Value) == 1 {
 		return nil
 	}
 
-	// Update the master key
+	// Update the main key
 	oldKeyring := b.keyring
 	b.keyring = b.keyring.SetMasterKey(key.Value)
 	oldKeyring.Zeroize(false)
 	return nil
 }
 
-// Unseal is used to provide the master key which permits the barrier
+// Unseal is used to provide the main key which permits the barrier
 // to be unsealed. If the key is not correct, the barrier remains sealed.
 func (b *AESGCMBarrier) Unseal(ctx context.Context, key []byte) error {
 	b.l.Lock()
@@ -459,7 +459,7 @@ func (b *AESGCMBarrier) Unseal(ctx context.Context, key []byte) error {
 	keyringNew := NewKeyring()
 	keyring := keyringNew.SetMasterKey(key)
 
-	// AddKey reuses the master, so we are only zeroizing after this call
+	// AddKey reuses the main, so we are only zeroizing after this call
 	defer keyringNew.Zeroize(false)
 
 	keyring, err = keyring.AddKey(&Key{
@@ -669,7 +669,7 @@ func (b *AESGCMBarrier) ActiveKeyInfo() (*KeyInfo, error) {
 	return info, nil
 }
 
-// Rekey is used to change the master key used to protect the keyring
+// Rekey is used to change the main key used to protect the keyring
 func (b *AESGCMBarrier) Rekey(ctx context.Context, key []byte) error {
 	b.l.Lock()
 	defer b.l.Unlock()
@@ -691,7 +691,7 @@ func (b *AESGCMBarrier) Rekey(ctx context.Context, key []byte) error {
 	return nil
 }
 
-// SetMasterKey updates the keyring's in-memory master key but does not persist
+// SetMasterKey updates the keyring's in-memory main key but does not persist
 // anything to storage
 func (b *AESGCMBarrier) SetMasterKey(key []byte) error {
 	b.l.Lock()
@@ -709,7 +709,7 @@ func (b *AESGCMBarrier) SetMasterKey(key []byte) error {
 	return nil
 }
 
-// Performs common tasks related to updating the master key; note that the lock
+// Performs common tasks related to updating the main key; note that the lock
 // must be held before calling this function
 func (b *AESGCMBarrier) updateMasterKeyCommon(key []byte) (*Keyring, error) {
 	if b.sealed {

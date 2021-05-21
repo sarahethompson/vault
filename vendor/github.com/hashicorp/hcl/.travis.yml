@@ -8,6 +8,6 @@ go:
 
 branches:
   only:
-    - master
+    - main
 
 script: make test

@@ -317,7 +317,7 @@ func (s *Server) RequestImmediateCheck() {
 
 // ProcessError handles SDAM error handling and implements driver.ErrorProcessor.
 func (s *Server) ProcessError(err error) {
-	// Invalidate server description if not master or node recovering error occurs.
+	// Invalidate server description if not main or node recovering error occurs.
 	// These errors can be reported as a command error or a write concern error.
 	if cerr, ok := err.(driver.Error); ok && (cerr.NodeIsRecovering() || cerr.NotMaster()) {
 		desc := s.Description()

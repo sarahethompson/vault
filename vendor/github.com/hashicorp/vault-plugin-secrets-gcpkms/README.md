@@ -1,6 +1,6 @@
 # Vault Secrets Engine for Google Cloud KMS
 
-[![Build Status](https://travis-ci.com/hashicorp/vault-plugin-secrets-gcpkms.svg?token=xjv5yxmcgdD1zvpeR4me&branch=master)](https://travis-ci.com/hashicorp/vault-plugin-secrets-gcpkms)
+[![Build Status](https://travis-ci.com/hashicorp/vault-plugin-secrets-gcpkms.svg?token=xjv5yxmcgdD1zvpeR4me&branch=main)](https://travis-ci.com/hashicorp/vault-plugin-secrets-gcpkms)
 
 This is a plugin backend for [HashiCorp Vault][vault] that manages [Google Cloud
 KMS][kms] keys and provides pass-through encryption/decryption of data through

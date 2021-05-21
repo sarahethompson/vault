@@ -236,7 +236,7 @@ func WithBalancerName(balancerName string) DialOption {
 //
 // Deprecated: service config should be received through name resolver or via
 // WithDefaultServiceConfig, as specified at
-// https://github.com/grpc/grpc/blob/master/doc/service_config.md.  Will be
+// https://github.com/grpc/grpc/blob/main/doc/service_config.md.  Will be
 // removed in a future 1.x release.
 func WithServiceConfig(c <-chan ServiceConfig) DialOption {
 	return newFuncDialOption(func(o *dialOptions) {
@@ -248,7 +248,7 @@ func WithServiceConfig(c <-chan ServiceConfig) DialOption {
 //
 // The backoff configuration specified as part of the ConnectParams overrides
 // all defaults specified in
-// https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md. Consider
+// https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md. Consider
 // using the backoff.DefaultConfig as a base, in cases where you want to
 // override only a subset of the backoff configuration.
 //

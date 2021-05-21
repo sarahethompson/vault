@@ -797,7 +797,7 @@ func (c *Core) checkKeyUpgrades(ctx context.Context) error {
 
 func (c *Core) reloadMasterKey(ctx context.Context) error {
 	if err := c.barrier.ReloadMasterKey(ctx); err != nil {
-		return errwrap.Wrapf("error reloading master key: {{err}}", err)
+		return errwrap.Wrapf("error reloading main key: {{err}}", err)
 	}
 	return nil
 }
@@ -825,7 +825,7 @@ func (c *Core) reloadShamirKey(ctx context.Context) error {
 		if err != nil {
 			return errwrap.Wrapf("failed to update seal access: {{err}}", err)
 		}
-		shamirKey = keyring.masterKey
+		shamirKey = keyring.mainKey
 	}
 	return c.seal.GetAccess().Wrapper.(*aeadwrapper.ShamirWrapper).SetAESGCMKeyBytes(shamirKey)
 }
@@ -836,7 +836,7 @@ func (c *Core) performKeyUpgrades(ctx context.Context) error {
 	}
 
 	if err := c.reloadMasterKey(ctx); err != nil {
-		return errwrap.Wrapf("error reloading master key: {{err}}", err)
+		return errwrap.Wrapf("error reloading main key: {{err}}", err)
 	}
 
 	if err := c.barrier.ReloadKeyring(ctx); err != nil {

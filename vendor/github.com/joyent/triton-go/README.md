@@ -247,7 +247,7 @@ func main() {
 
 ```
 
-[4]: https://github.com/joyent/node-http-signature/blob/master/http_signing.md
+[4]: https://github.com/joyent/node-http-signature/blob/main/http_signing.md
 [5]: https://godoc.org/github.com/joyent/triton-go/authentication
 [6]: https://godoc.org/github.com/joyent/triton-go/authentication
 [7]: https://github.com/pkg/errors

@@ -15,7 +15,7 @@ import (
 	"github.com/mitchellh/mapstructure"
 )
 
-// OpenAPI specification (OAS): https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md
+// OpenAPI specification (OAS): https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md
 const OASVersion = "3.0.2"
 
 // NewOASDocument returns an empty OpenAPI document.

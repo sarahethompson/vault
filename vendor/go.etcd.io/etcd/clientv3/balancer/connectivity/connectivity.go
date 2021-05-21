@@ -35,7 +35,7 @@ func New(lg *zap.Logger) Recorder {
 
 // recorder takes the connectivity states of multiple SubConns
 // and returns one aggregated connectivity state.
-// ref. https://github.com/grpc/grpc-go/blob/master/balancer/balancer.go
+// ref. https://github.com/grpc/grpc-go/blob/main/balancer/balancer.go
 type recorder struct {
 	lg *zap.Logger
 
@@ -63,7 +63,7 @@ func (rc *recorder) GetCurrentState() (state connectivity.State) {
 //
 // Idle and Shutdown are not considered.
 //
-// ref. https://github.com/grpc/grpc-go/blob/master/balancer/balancer.go
+// ref. https://github.com/grpc/grpc-go/blob/main/balancer/balancer.go
 func (rc *recorder) RecordTransition(oldState, newState connectivity.State) {
 	rc.mu.Lock()
 	defer rc.mu.Unlock()

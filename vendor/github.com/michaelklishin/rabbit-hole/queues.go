@@ -57,7 +57,7 @@ type QueueInfo struct {
 	// Extra queue arguments
 	Arguments map[string]interface{} `json:"arguments"`
 
-	// RabbitMQ node that hosts master for this queue
+	// RabbitMQ node that hosts main for this queue
 	Node string `json:"node"`
 	// Queue status
 	Status string `json:"state"`

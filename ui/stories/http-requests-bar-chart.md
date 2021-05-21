@@ -17,6 +17,6 @@
 **See**
 
 - [Uses of HttpRequestsBarChart](https://github.com/hashicorp/vault/search?l=Handlebars&q=HttpRequestsBarChart+OR+http-requests-bar-chart)
-- [HttpRequestsBarChart Source Code](https://github.com/hashicorp/vault/blob/master/ui/app/components/http-requests-bar-chart.js)
+- [HttpRequestsBarChart Source Code](https://github.com/hashicorp/vault/blob/main/ui/app/components/http-requests-bar-chart.js)
 
 ---

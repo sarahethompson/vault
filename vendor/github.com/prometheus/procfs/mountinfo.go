@@ -105,7 +105,7 @@ func parseMountInfoString(mountString string) (*MountInfo, error) {
 		return nil, fmt.Errorf("failed to parse parent ID")
 	}
 	// Has optional fields, which is a space separated list of values.
-	// Example: shared:2 master:7
+	// Example: shared:2 main:7
 	if mountInfo[6] != "" {
 		mount.OptionalFields, err = mountOptionsParseOptionalFields(mountInfo[6 : mountInfoLength-4])
 		if err != nil {
@@ -120,7 +120,7 @@ func mountOptionsIsValidField(s string) bool {
 	switch s {
 	case
 		"shared",
-		"master",
+		"main",
 		"propagate_from",
 		"unbindable":
 		return true

@@ -11,5 +11,5 @@
   version = "0.8.1"
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/tv42/httpunix"

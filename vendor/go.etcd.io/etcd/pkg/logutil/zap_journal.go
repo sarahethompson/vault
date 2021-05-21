@@ -34,7 +34,7 @@ import (
 // to the local systemd journal. If journald send fails, it fails
 // back to writing to the original writer.
 // The decode overhead is only <30µs per write.
-// Reference: https://github.com/coreos/pkg/blob/master/capnslog/journald_formatter.go
+// Reference: https://github.com/coreos/pkg/blob/main/capnslog/journald_formatter.go
 func NewJournalWriter(wr io.Writer) (io.Writer, error) {
 	return &journalWriter{Writer: wr}, systemd.DialJournal()
 }

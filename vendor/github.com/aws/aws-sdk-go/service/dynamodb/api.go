@@ -8405,10 +8405,10 @@ type CreateReplicationGroupMemberAction struct {
 	// Replica-specific global secondary index settings.
 	GlobalSecondaryIndexes []*ReplicaGlobalSecondaryIndex `min:"1" type:"list"`
 
-	// The AWS KMS customer master key (CMK) that should be used for AWS KMS encryption
+	// The AWS KMS customer main key (CMK) that should be used for AWS KMS encryption
 	// in the new replica. To specify a CMK, use its key ID, Amazon Resource Name
 	// (ARN), alias name, or alias ARN. Note that you should only provide this parameter
-	// if the key is different from the default DynamoDB KMS master key alias/aws/dynamodb.
+	// if the key is different from the default DynamoDB KMS main key alias/aws/dynamodb.
 	KMSMasterKeyId *string `type:"string"`
 
 	// Replica-specific provisioned throughput. If not specified, uses the source
@@ -14565,7 +14565,7 @@ type ReplicaDescription struct {
 	// Replica-specific global secondary index settings.
 	GlobalSecondaryIndexes []*ReplicaGlobalSecondaryIndexDescription `type:"list"`
 
-	// The AWS KMS customer master key (CMK) of the replica that will be used for
+	// The AWS KMS customer main key (CMK) of the replica that will be used for
 	// AWS KMS encryption.
 	KMSMasterKeyId *string `type:"string"`
 
@@ -15971,7 +15971,7 @@ type SSEDescription struct {
 	// KMS key remains inaccessible for more than seven days from this date.
 	InaccessibleEncryptionDateTime *time.Time `type:"timestamp"`
 
-	// The AWS KMS customer master key (CMK) ARN used for the AWS KMS encryption.
+	// The AWS KMS customer main key (CMK) ARN used for the AWS KMS encryption.
 	KMSMasterKeyArn *string `type:"string"`
 
 	// Server-side encryption type. The only supported value is:
@@ -16034,10 +16034,10 @@ type SSESpecification struct {
 	// (false) or not specified, server-side encryption is set to AWS owned CMK.
 	Enabled *bool `type:"boolean"`
 
-	// The AWS KMS customer master key (CMK) that should be used for the AWS KMS
+	// The AWS KMS customer main key (CMK) that should be used for the AWS KMS
 	// encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN),
 	// alias name, or alias ARN. Note that you should only provide this parameter
-	// if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+	// if the key is different from the default DynamoDB customer main key alias/aws/dynamodb.
 	KMSMasterKeyId *string `type:"string"`
 
 	// Server-side encryption type. The only supported value is:
@@ -19321,10 +19321,10 @@ type UpdateReplicationGroupMemberAction struct {
 	// Replica-specific global secondary index settings.
 	GlobalSecondaryIndexes []*ReplicaGlobalSecondaryIndex `min:"1" type:"list"`
 
-	// The AWS KMS customer master key (CMK) of the replica that should be used
+	// The AWS KMS customer main key (CMK) of the replica that should be used
 	// for AWS KMS encryption. To specify a CMK, use its key ID, Amazon Resource
 	// Name (ARN), alias name, or alias ARN. Note that you should only provide this
-	// parameter if the key is different from the default DynamoDB KMS master key
+	// parameter if the key is different from the default DynamoDB KMS main key
 	// alias/aws/dynamodb.
 	KMSMasterKeyId *string `type:"string"`
 

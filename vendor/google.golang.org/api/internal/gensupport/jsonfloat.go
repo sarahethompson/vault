@@ -17,7 +17,7 @@ import (
 // that is a proto-to-JSON spec, it applies to all Google APIs.
 //
 // The jsonpb package
-// (https://github.com/golang/protobuf/blob/master/jsonpb/jsonpb.go) has
+// (https://github.com/golang/protobuf/blob/main/jsonpb/jsonpb.go) has
 // similar functionality, but only for direct translation from proto messages
 // to JSON.
 type JSONFloat64 float64

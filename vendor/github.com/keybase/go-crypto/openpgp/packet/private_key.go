@@ -128,7 +128,7 @@ func (pk *PrivateKey) parse(r io.Reader) (err error) {
 			pk.sha1Checksum = true
 		}
 		// S2K == nil implies that we got a "GNU Dummy" S2K. For instance,
-		// because our master secret key is on a USB key in a vault somewhere.
+		// because our main secret key is on a USB key in a vault somewhere.
 		// In that case, there is no further data to consume here.
 		if pk.s2k == nil {
 			pk.Encrypted = false

@@ -19,7 +19,7 @@
 // Package backoff provides configuration options for backoff.
 //
 // More details can be found at:
-// https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md.
+// https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md.
 //
 // All APIs in this package are experimental.
 package backoff
@@ -40,7 +40,7 @@ type Config struct {
 }
 
 // DefaultConfig is a backoff configuration with the default values specfied
-// at https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md.
+// at https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md.
 //
 // This should be useful for callers who want to configure backoff with
 // non-default values only for a subset of the options.

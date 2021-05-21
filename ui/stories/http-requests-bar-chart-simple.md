@@ -18,6 +18,6 @@ The HttpRequestsBarChartSimple is a simplified version of the HttpRequestsBarCha
 **See**
 
 - [Uses of HttpRequestsBarChartSimple](https://github.com/hashicorp/vault/search?l=Handlebars&q=HttpRequestsBarChartSimple+OR+http-requests-bar-chart-simple)
-- [HttpRequestsBarChartSimple Source Code](https://github.com/hashicorp/vault/blob/master/ui/app/components/http-requests-bar-chart-simple.js)
+- [HttpRequestsBarChartSimple Source Code](https://github.com/hashicorp/vault/blob/main/ui/app/components/http-requests-bar-chart-simple.js)
 
 ---

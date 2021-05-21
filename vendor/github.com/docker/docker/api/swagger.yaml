@@ -4227,7 +4227,7 @@ definitions:
         example:
           runc:
             path: "runc"
-          runc-master:
+          runc-main:
             path: "/go/bin/runc"
           custom:
             path: "/usr/local/bin/my-oci-runtime"

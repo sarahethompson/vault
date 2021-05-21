@@ -14,9 +14,9 @@ part of _Vault Enterprise_.
 to opt-in automatic [unsealing](/docs/concepts/seal#unsealing).
 HSM integration provides three pieces of special functionality:
 
-- **Master Key Wrapping**: Vault protects its master key by transiting it through
+- **Master Key Wrapping**: Vault protects its main key by transiting it through
   the HSM for encryption rather than splitting into key shares
-- **Automatic Unsealing**: Vault stores its encrypted master key in storage,
+- **Automatic Unsealing**: Vault stores its encrypted main key in storage,
   allowing for automatic unsealing
 - **Seal Wrapping** to provide FIPS KeyStorage-conforming functionality for Critical Security Parameters
 
@@ -28,9 +28,9 @@ common pattern is to deploy Vault immutably. As such automating unseal using an
 HSM provides a simplified yet secure way of unsealing Vault nodes as they get
 deployed.
 
-Vault pulls its encrypted master key from storage and transit it through the
-HSM for decryption via **PKCS \#11 API**. Once the master key is decrypted,
-Vault uses the master key to decrypt the encryption key to resume with Vault
+Vault pulls its encrypted main key from storage and transit it through the
+HSM for decryption via **PKCS \#11 API**. Once the main key is decrypted,
+Vault uses the main key to decrypt the encryption key to resume with Vault
 operations.
 
 ## Reference Material
@@ -206,10 +206,10 @@ Recovery key initialized with 1 key shares and a key threshold of 1. Please
 securely distribute the key shares printed above.
 ```
 
-There is only a single master key created which is encrypted by the HSM using
+There is only a single main key created which is encrypted by the HSM using
 PKCS \#11, and then placed in the storage. When Vault needs to be unsealed, it
-grabs the HSM encrypted master key from the storage, round trips it through the
-HSM to decrypt the master key.
+grabs the HSM encrypted main key from the storage, round trips it through the
+HSM to decrypt the main key.
 
 ~> **NOTE:** When Vault is initialized while using an HSM, rather than unseal
 keys being returned to the operator, **recovery keys** are returned. These are
@@ -252,7 +252,7 @@ unsealed upon its start. You can proceed with Vault operations.
 140-2 Certified HSM which is supported by _Vault Enterprise Premium_.
 
 For some values, seal wrapping is **always enabled** including the recovery key, any
-stored key shares, the master key, the keyring, and more. When working with the
+stored key shares, the main key, the keyring, and more. When working with the
 key/value secret engine, you can enable seal wrap to wrap all data.
 
 ### CLI command

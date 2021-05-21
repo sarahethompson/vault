@@ -49,7 +49,7 @@ Rich Feature Set includes:
       - Options to resolve ambiguities in handling raw bytes (as string or []byte)
         during schema-less decoding (decoding into a nil interface{})
       - RPC Server/Client Codec for msgpack-rpc protocol defined at:
-        https://github.com/msgpack-rpc/msgpack-rpc/blob/master/spec.md
+        https://github.com/msgpack-rpc/msgpack-rpc/blob/main/spec.md
   - Fast Paths for some container types:
     For some container types, we circumvent reflection and its associated overhead
     and allocation costs, and encode/decode directly. These types are:

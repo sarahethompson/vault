@@ -49,9 +49,9 @@ Start by creating a new branch for your changes:
 
 ```
 cd $GOPATH/src/go.uber.org/zap
-git checkout master
+git checkout main
 git fetch upstream
-git rebase upstream/master
+git rebase upstream/main
 git checkout -b cool_new_feature
 ```
 

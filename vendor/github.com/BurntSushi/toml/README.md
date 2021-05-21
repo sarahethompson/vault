@@ -9,7 +9,7 @@ representations. (There is an example of this below.)
 Spec: https://github.com/toml-lang/toml
 
 Compatible with TOML version
-[v0.4.0](https://github.com/toml-lang/toml/blob/master/versions/en/toml-v0.4.0.md)
+[v0.4.0](https://github.com/toml-lang/toml/blob/main/versions/en/toml-v0.4.0.md)
 
 Documentation: https://godoc.org/github.com/BurntSushi/toml
 
@@ -26,7 +26,7 @@ go get github.com/BurntSushi/toml/cmd/tomlv
 tomlv some-toml-file.toml
 ```
 
-[![Build Status](https://travis-ci.org/BurntSushi/toml.svg?branch=master)](https://travis-ci.org/BurntSushi/toml) [![GoDoc](https://godoc.org/github.com/BurntSushi/toml?status.svg)](https://godoc.org/github.com/BurntSushi/toml)
+[![Build Status](https://travis-ci.org/BurntSushi/toml.svg?branch=main)](https://travis-ci.org/BurntSushi/toml) [![GoDoc](https://godoc.org/github.com/BurntSushi/toml?status.svg)](https://godoc.org/github.com/BurntSushi/toml)
 
 ### Testing
 

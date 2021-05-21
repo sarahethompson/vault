@@ -109,34 +109,34 @@ func TestKeyring(t *testing.T) {
 
 func TestKeyring_MasterKey(t *testing.T) {
 	k := NewKeyring()
-	master := []byte("test")
-	master2 := []byte("test2")
+	main := []byte("test")
+	main2 := []byte("test2")
 
-	// Check no master
+	// Check no main
 	out := k.MasterKey()
 	if out != nil {
 		t.Fatalf("bad: %v", out)
 	}
 
-	// Set master
-	k = k.SetMasterKey(master)
+	// Set main
+	k = k.SetMasterKey(main)
 	out = k.MasterKey()
-	if !bytes.Equal(out, master) {
+	if !bytes.Equal(out, main) {
 		t.Fatalf("bad: %v", out)
 	}
 
-	// Update master
-	k = k.SetMasterKey(master2)
+	// Update main
+	k = k.SetMasterKey(main2)
 	out = k.MasterKey()
-	if !bytes.Equal(out, master2) {
+	if !bytes.Equal(out, main2) {
 		t.Fatalf("bad: %v", out)
 	}
 }
 
 func TestKeyring_Serialize(t *testing.T) {
 	k := NewKeyring()
-	master := []byte("test")
-	k = k.SetMasterKey(master)
+	main := []byte("test")
+	k = k.SetMasterKey(main)
 
 	now := time.Now()
 	testKey := []byte("testing")
@@ -155,7 +155,7 @@ func TestKeyring_Serialize(t *testing.T) {
 	}
 
 	out := k2.MasterKey()
-	if !bytes.Equal(out, master) {
+	if !bytes.Equal(out, main) {
 		t.Fatalf("bad: %v", out)
 	}
 

@@ -25,7 +25,7 @@ quickly merge or address your contributions.
 
 * Make sure you test against the latest released version. It is possible
   we already fixed the bug you're experiencing. Even better is if you can test
-  against `master`, as bugs are fixed regularly but new versions are only
+  against `main`, as bugs are fixed regularly but new versions are only
   released every few months.
 
 * Provide steps to reproduce the issue, and if possible include the expected 

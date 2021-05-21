@@ -243,10 +243,10 @@ been marked as *Deprecated* for at least one minor release (e.g. 0.9.0 to 0.10.0
 removing the *Deprecated* functionality will be made no sooner than 28 days after the first
 release in which the functionality was marked *Deprecated*.
 
-[travis-image]: https://travis-ci.org/census-instrumentation/opencensus-go.svg?branch=master
+[travis-image]: https://travis-ci.org/census-instrumentation/opencensus-go.svg?branch=main
 [travis-url]: https://travis-ci.org/census-instrumentation/opencensus-go
 [appveyor-image]: https://ci.appveyor.com/api/projects/status/vgtt29ps1783ig38?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/opencensusgoteam/opencensus-go/branch/master
+[appveyor-url]: https://ci.appveyor.com/project/opencensusgoteam/opencensus-go/branch/main
 [godoc-image]: https://godoc.org/go.opencensus.io?status.svg
 [godoc-url]: https://godoc.org/go.opencensus.io
 [gitter-image]: https://badges.gitter.im/census-instrumentation/lobby.svg

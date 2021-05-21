@@ -150,7 +150,7 @@ func (server *mongoServer) AcquireSocket(poolLimit int, timeout time.Duration) (
 // generally be done through server.AcquireSocket().
 func (server *mongoServer) Connect(timeout time.Duration) (*mongoSocket, error) {
 	server.RLock()
-	master := server.info.Master
+	main := server.info.Master
 	dial := server.dial
 	server.RUnlock()
 
@@ -180,7 +180,7 @@ func (server *mongoServer) Connect(timeout time.Duration) (*mongoSocket, error) 
 	}
 	logf("Connection to %s established.", server.Addr)
 
-	stats.conn(+1, master)
+	stats.conn(+1, main)
 	return newSocket(server, conn, timeout), nil
 }
 

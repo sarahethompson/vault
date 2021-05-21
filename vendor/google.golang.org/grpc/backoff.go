@@ -28,7 +28,7 @@ import (
 )
 
 // DefaultBackoffConfig uses values specified for backoff in
-// https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md.
+// https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md.
 //
 // Deprecated: use ConnectParams instead. Will be supported throughout 1.x.
 var DefaultBackoffConfig = BackoffConfig{
@@ -46,7 +46,7 @@ type BackoffConfig struct {
 // ConnectParams defines the parameters for connecting and retrying. Users are
 // encouraged to use this instead of the BackoffConfig type defined above. See
 // here for more details:
-// https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md.
+// https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md.
 //
 // This API is EXPERIMENTAL.
 type ConnectParams struct {

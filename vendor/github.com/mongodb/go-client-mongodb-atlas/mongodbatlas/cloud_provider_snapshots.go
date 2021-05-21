@@ -36,7 +36,7 @@ type CloudProviderSnapshot struct {
 	ExpiresAt        string  `json:"expiresAt,omitempty"`        // UTC ISO 8601 formatted point in time when Atlas will delete the snapshot.
 	Description      string  `json:"description,omitempty"`      // Description of the on-demand snapshot.
 	Links            []*Link `json:"links,omitempty"`            // One or more links to sub-resources and/or related resources.
-	MasterKeyUUID    string  `json:"masterKeyUUID,omitempty"`    // Unique ID of the AWS KMS Customer Master Key used to encrypt the snapshot. Only visible for clusters using Encryption at Rest via Customer KMS.
+	MasterKeyUUID    string  `json:"mainKeyUUID,omitempty"`    // Unique ID of the AWS KMS Customer Master Key used to encrypt the snapshot. Only visible for clusters using Encryption at Rest via Customer KMS.
 	MongodVersion    string  `json:"mongodVersion,omitempty"`    // Version of the MongoDB server.
 	SnapshotType     string  `json:"snapshotType,omitempty"`     // Specified the type of snapshot. Valid values are onDemand and scheduled.
 	Status           string  `json:"status,omitempty"`           // Current status of the snapshot. One of the following values: queued, inProgress, completed, failed

@@ -35,7 +35,7 @@ pass cancelation signals and deadlines to various services of the client for
 handling a request. In case there is no context available, then context.Background()
 can be used as a starting point.
 
-For more sample code snippets, head over to the https://github.com/google/go-github/tree/master/example directory.
+For more sample code snippets, head over to the https://github.com/google/go-github/tree/main/example directory.
 
 Authentication
 

@@ -408,7 +408,7 @@ func (*ConfChangeSingle) Descriptor() ([]byte, []int) { return fileDescriptorRaf
 //
 // For details on Raft membership changes, see:
 //
-// [1]: https://github.com/ongardie/dissertation/blob/master/online-trim.pdf
+// [1]: https://github.com/ongardie/dissertation/blob/main/online-trim.pdf
 type ConfChangeV2 struct {
 	Transition       ConfChangeTransition `protobuf:"varint,1,opt,name=transition,enum=raftpb.ConfChangeTransition" json:"transition"`
 	Changes          []ConfChangeSingle   `protobuf:"bytes,2,rep,name=changes" json:"changes"`

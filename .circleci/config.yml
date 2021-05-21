@@ -1867,7 +1867,7 @@ workflows:
         filters:
           branches:
             only:
-            - master
+            - main
         context: vault-docs
     - algolia-index:
         filters:
@@ -1885,5 +1885,5 @@ workflows:
         filters:
           branches:
             only:
-            - master
+            - main
   version: 2

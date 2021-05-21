@@ -28,9 +28,9 @@ matrix:
     - go: 1.12.x
       script:
         - ./ztest.sh
-    - go: master
+    - go: main
       script:
         - go test -v -race ./...
   allow_failures:
-    - go: master
+    - go: main
   fast_finish: true

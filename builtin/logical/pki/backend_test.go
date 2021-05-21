@@ -1272,7 +1272,7 @@ func generateRoleSteps(t *testing.T, useCSRs bool) []logicaltest.TestStep {
 	}
 	// Organization tests
 	{
-		roleVals.Organization = []string{"system:masters"}
+		roleVals.Organization = []string{"system:mains"}
 		addTests(getOrganizationCheck(roleVals))
 
 		roleVals.Organization = []string{"foo", "bar"}

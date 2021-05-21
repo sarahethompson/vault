@@ -8,7 +8,7 @@
   version = "v1.4.2"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/cloudfoundry/gofileutils"
   packages = ["fileutils"]
   revision = "4d0c80011a0f37da1711c184028bc40137cd45af"
@@ -26,13 +26,13 @@
   version = "v1.0"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
   revision = "1e59b77b52bf8e4b449a57e6f79f21226d571845"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/gopherjs/gopherjs"
   packages = ["js"]
   revision = "444abdf920945de5d4a977b572bcc6c674d1e4eb"
@@ -44,7 +44,7 @@
   version = "v4.2.1"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/martini-contrib/render"
   packages = ["."]
   revision = "ec18f8345a1181146728238980606fb1d6f40e8c"
@@ -69,7 +69,7 @@
   version = "v1.2.0"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "github.com/oxtoacart/bpool"
   packages = ["."]
   revision = "4e1c5567d7c2dd59fa4c7c83d34c2f3528b025d6"
@@ -101,7 +101,7 @@
   version = "1.6.3"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -113,7 +113,7 @@
   revision = "9dfe39835686865bff950a07b394c12a98ddc811"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/oauth2"
   packages = [
     ".",
@@ -123,7 +123,7 @@
   revision = "f95fa95eaa936d9d87489b15d1d18b97c1ba9c28"
 
 [[projects]]
-  branch = "master"
+  branch = "main"
   name = "golang.org/x/text"
   packages = [
     "encoding",

@@ -387,7 +387,7 @@ func (s *Stream) Trailer() metadata.MD {
 // ContentSubtype returns the content-subtype for a request. For example, a
 // content-subtype of "proto" will result in a content-type of
 // "application/grpc+proto". This will always be lowercase.  See
-// https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md#requests for
+// https://github.com/grpc/grpc/blob/main/doc/PROTOCOL-HTTP2.md#requests for
 // more details.
 func (s *Stream) ContentSubtype() string {
 	return s.contentSubtype
@@ -608,7 +608,7 @@ type CallHdr struct {
 	// content-subtype of "proto" will result in a content-type of
 	// "application/grpc+proto". The value of ContentSubtype must be all
 	// lowercase, otherwise the behavior is undefined. See
-	// https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md#requests
+	// https://github.com/grpc/grpc/blob/main/doc/PROTOCOL-HTTP2.md#requests
 	// for more details.
 	ContentSubtype string
 

@@ -193,7 +193,7 @@ var (
 )
 
 // EtcdError defines gRPC server errors.
-// (https://github.com/grpc/grpc-go/blob/master/rpc_util.go#L319-L323)
+// (https://github.com/grpc/grpc-go/blob/main/rpc_util.go#L319-L323)
 type EtcdError struct {
 	code codes.Code
 	desc string

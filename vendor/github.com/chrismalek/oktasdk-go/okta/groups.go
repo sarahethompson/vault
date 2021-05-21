@@ -12,7 +12,7 @@ const (
 	GroupTypeOKTA = "OKTA_GROUP"
 	// GroupTypeBuiltIn - group type constant for a Built in OKTA groups
 	GroupTypeBuiltIn = "BUILT_IN"
-	// GroupTypeApp -- group type constant for app mastered group
+	// GroupTypeApp -- group type constant for app mained group
 	GroupTypeApp = "APP_GROUP"
 
 	groupTypeFilter                  = "type"

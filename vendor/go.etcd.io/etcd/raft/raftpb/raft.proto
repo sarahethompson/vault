@@ -169,7 +169,7 @@ message ConfChangeSingle {
 //
 // For details on Raft membership changes, see:
 //
-// [1]: https://github.com/ongardie/dissertation/blob/master/online-trim.pdf
+// [1]: https://github.com/ongardie/dissertation/blob/main/online-trim.pdf
 message ConfChangeV2 {
 	optional ConfChangeTransition transition = 1 [(gogoproto.nullable) = false];
 	repeated ConfChangeSingle     changes =    2 [(gogoproto.nullable) = false];

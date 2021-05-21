@@ -120,7 +120,7 @@ func Dial(target string, opts ...DialOption) (*ClientConn, error) {
 // pending operations after this function returns.
 //
 // The target name syntax is defined in
-// https://github.com/grpc/grpc/blob/master/doc/naming.md.
+// https://github.com/grpc/grpc/blob/main/doc/naming.md.
 // e.g. to use dns resolver, a "dns:///" prefix should be applied to the target.
 func DialContext(ctx context.Context, target string, opts ...DialOption) (conn *ClientConn, err error) {
 	cc := &ClientConn{
@@ -1100,7 +1100,7 @@ func (ac *addrConn) resetTransport() {
 		// addresses will never be tried.
 		//
 		// The spec doesn't mention what should be done for multiple addresses.
-		// https://github.com/grpc/grpc/blob/master/doc/connection-backoff.md#proposed-backoff-algorithm
+		// https://github.com/grpc/grpc/blob/main/doc/connection-backoff.md#proposed-backoff-algorithm
 		connectDeadline := time.Now().Add(dialDuration)
 
 		ac.updateConnectivityState(connectivity.Connecting, nil)

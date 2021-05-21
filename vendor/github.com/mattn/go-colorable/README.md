@@ -1,7 +1,7 @@
 # go-colorable
 
-[![Build Status](https://travis-ci.org/mattn/go-colorable.svg?branch=master)](https://travis-ci.org/mattn/go-colorable)
-[![Codecov](https://codecov.io/gh/mattn/go-colorable/branch/master/graph/badge.svg)](https://codecov.io/gh/mattn/go-colorable)
+[![Build Status](https://travis-ci.org/mattn/go-colorable.svg?branch=main)](https://travis-ci.org/mattn/go-colorable)
+[![Codecov](https://codecov.io/gh/mattn/go-colorable/branch/main/graph/badge.svg)](https://codecov.io/gh/mattn/go-colorable)
 [![GoDoc](https://godoc.org/github.com/mattn/go-colorable?status.svg)](http://godoc.org/github.com/mattn/go-colorable)
 [![Go Report Card](https://goreportcard.com/badge/mattn/go-colorable)](https://goreportcard.com/report/mattn/go-colorable)
 

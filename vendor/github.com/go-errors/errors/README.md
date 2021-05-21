@@ -1,7 +1,7 @@
 go-errors/errors
 ================
 
-[![Build Status](https://travis-ci.org/go-errors/errors.svg?branch=master)](https://travis-ci.org/go-errors/errors)
+[![Build Status](https://travis-ci.org/go-errors/errors.svg?branch=main)](https://travis-ci.org/go-errors/errors)
 
 Package errors adds stacktrace support to errors in go.
 

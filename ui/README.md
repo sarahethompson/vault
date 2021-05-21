@@ -163,7 +163,7 @@ Each component in `vault/ui/app/components` should have a corresponding `[compon
 Note that placing a param inside brackets (e.g. `[closedLabel=More options]` indicates it is optional and has a default value of `'More options'`.)
 
 2. Generate a new story with `ember generate story [name-of-component]`
-3. Inside the newly generated `stories` file, add at least one example of the component. If the component should be interactive, enable the [Storybook Knobs addon](https://github.com/storybooks/storybook/tree/master/addons/knobs).
+3. Inside the newly generated `stories` file, add at least one example of the component. If the component should be interactive, enable the [Storybook Knobs addon](https://github.com/storybooks/storybook/tree/main/addons/knobs).
 4. Generate the `notes` file for the component with `yarn gen-story-md [name-of-component] [name-of-engine-or-addon]` (e.g. `yarn gen-md alert-banner core`). This will generate markdown documentation of the component and place it at `vault/ui/stories/[name-of-component].md`. If your component is a template-only component, you will need to manually create the markdown file.
 
 See the [Storybook Docs](https://storybook.js.org/docs/basics/introduction/) for more information on writing stories.
@@ -184,6 +184,6 @@ A Netlify integration deploys a static Storybook build for any PR on the Vault G
   - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 - [Storybook for Ember Live Example](https://storybooks-ember.netlify.com/?path=/story/addon-centered--button)
-- [Storybook Addons](https://github.com/storybooks/storybook/tree/master/addons/)
+- [Storybook Addons](https://github.com/storybooks/storybook/tree/main/addons/)
 - [Storybook Docs](https://storybook.js.org/docs/basics/introduction/)
 - [Browserstack Automate](https://automate.browserstack.com/)

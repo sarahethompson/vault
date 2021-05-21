@@ -39,7 +39,7 @@ func LocalKmsProvider() *LocalKmsProviderOptions {
 	return &LocalKmsProviderOptions{}
 }
 
-// SetMasterKey specifies the local master key.
+// SetMasterKey specifies the local main key.
 func (lkpo *LocalKmsProviderOptions) SetMasterKey(key []byte) *LocalKmsProviderOptions {
 	lkpo.MasterKey = key
 	return lkpo

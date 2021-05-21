@@ -47,12 +47,12 @@ func performTestSealUnwrapper(t *testing.T, phys physical.Backend, logger log.Lo
 	defer cluster.Cleanup()
 
 	// Read a value and then save it back in a proto message
-	entry, err := phys.Get(ctx, "core/master")
+	entry, err := phys.Get(ctx, "core/main")
 	if err != nil {
 		t.Fatal(err)
 	}
 	if len(entry.Value) == 0 {
-		t.Fatal("got no value for master")
+		t.Fatal("got no value for main")
 	}
 	// Save the original for comparison later
 	origBytes := make([]byte, len(entry.Value))
@@ -78,14 +78,14 @@ func performTestSealUnwrapper(t *testing.T, phys physical.Backend, logger log.Lo
 	// the underlying physical store. When we read from active, it should both
 	// successfully decode it and persist it back.
 	checkValue := func(core *Core, wrapped bool) {
-		entry, err := core.physical.Get(ctx, "core/master")
+		entry, err := core.physical.Get(ctx, "core/main")
 		if err != nil {
 			t.Fatal(err)
 		}
 		if !bytes.Equal(entry.Value, origBytes) {
 			t.Fatalf("mismatched original bytes and unwrapped entry bytes:\ngot:\n%v\nexpected:\n%v", entry.Value, origBytes)
 		}
-		underlyingEntry, err := phys.Get(ctx, "core/master")
+		underlyingEntry, err := phys.Get(ctx, "core/main")
 		if err != nil {
 			t.Fatal(err)
 		}

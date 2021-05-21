@@ -61,16 +61,16 @@ xc:
 .PHONY: xc
 
 website: website-sync
-	@(cd .vault-master/website && make website)
+	@(cd .vault-main/website && make website)
 .PHONY: website
 
 website-sync:
-	@if [[ -d .vault-master ]]; then \
-		cd .vault-master; \
+	@if [[ -d .vault-main ]]; then \
+		cd .vault-main; \
 		git reset --quiet --hard HEAD; \
 		git clean --quiet -ffxd; \
-		git pull --quiet origin master; \
+		git pull --quiet origin main; \
 	else \
-		git clone --quiet --depth=1 https://github.com/hashicorp/vault .vault-master; \
+		git clone --quiet --depth=1 https://github.com/hashicorp/vault .vault-main; \
 	fi
-	rsync --quiet -a website/ .vault-master/website
+	rsync --quiet -a website/ .vault-main/website

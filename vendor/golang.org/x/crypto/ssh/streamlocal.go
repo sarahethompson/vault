@@ -10,7 +10,7 @@ import (
 // with "direct-streamlocal@openssh.com" string.
 //
 // See openssh-portable/PROTOCOL, section 2.4. connection: Unix domain socket forwarding
-// https://github.com/openssh/openssh-portable/blob/master/PROTOCOL#L235
+// https://github.com/openssh/openssh-portable/blob/main/PROTOCOL#L235
 type streamLocalChannelOpenDirectMsg struct {
 	socketPath string
 	reserved0  string

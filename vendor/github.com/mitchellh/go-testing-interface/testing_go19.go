@@ -2,7 +2,7 @@
 
 // NOTE: This is a temporary copy of testing.go for Go 1.9 with the addition
 // of "Helper" to the T interface. Go 1.9 at the time of typing is in RC
-// and is set for release shortly. We'll support this on master as the default
+// and is set for release shortly. We'll support this on main as the default
 // as soon as 1.9 is released.
 
 package testing

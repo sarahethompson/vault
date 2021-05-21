@@ -196,7 +196,7 @@ type ClientConn interface {
 }
 
 // Target represents a target for gRPC, as specified in:
-// https://github.com/grpc/grpc/blob/master/doc/naming.md.
+// https://github.com/grpc/grpc/blob/main/doc/naming.md.
 // It is parsed from the target string that gets passed into Dial or DialContext by the user. And
 // grpc passes it to the resolver and the balancer.
 //
@@ -226,7 +226,7 @@ type Builder interface {
 	// not nil.
 	Build(target Target, cc ClientConn, opts BuildOptions) (Resolver, error)
 	// Scheme returns the scheme supported by this resolver.
-	// Scheme is defined at https://github.com/grpc/grpc/blob/master/doc/naming.md.
+	// Scheme is defined at https://github.com/grpc/grpc/blob/main/doc/naming.md.
 	Scheme() string
 }
 

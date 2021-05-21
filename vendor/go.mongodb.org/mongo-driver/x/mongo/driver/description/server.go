@@ -109,7 +109,7 @@ func NewServer(addr address.Address, response bsoncore.Document) Server {
 				desc.LastError = err
 				return desc
 			}
-		case "ismaster":
+		case "ismain":
 			isMaster, ok = element.Value().BooleanOK()
 			if !ok {
 				desc.LastError = fmt.Errorf("expected 'isMaster' to be a boolean but it's a BSON %s", element.Value().Type)

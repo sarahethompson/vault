@@ -152,7 +152,7 @@ func (t MicroTime) MarshalJSON() ([]byte, error) {
 // OpenAPISchemaType is used by the kube-openapi generator when constructing
 // the OpenAPI spec of this type.
 //
-// See: https://github.com/kubernetes/kube-openapi/tree/master/pkg/generators
+// See: https://github.com/kubernetes/kube-openapi/tree/main/pkg/generators
 func (_ MicroTime) OpenAPISchemaType() []string { return []string{"string"} }
 
 // OpenAPISchemaFormat is used by the kube-openapi generator when constructing

@@ -28,7 +28,7 @@ type Repository struct {
 	Homepage         *string          `json:"homepage,omitempty"`
 	CodeOfConduct    *CodeOfConduct   `json:"code_of_conduct,omitempty"`
 	DefaultBranch    *string          `json:"default_branch,omitempty"`
-	MasterBranch     *string          `json:"master_branch,omitempty"`
+	MasterBranch     *string          `json:"main_branch,omitempty"`
 	CreatedAt        *Timestamp       `json:"created_at,omitempty"`
 	PushedAt         *Timestamp       `json:"pushed_at,omitempty"`
 	UpdatedAt        *Timestamp       `json:"updated_at,omitempty"`

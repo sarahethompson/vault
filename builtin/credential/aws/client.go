@@ -184,7 +184,7 @@ func (b *backend) stsRoleForAccount(ctx context.Context, s logical.Storage, acco
 	if err != nil {
 		return "", errwrap.Wrapf(fmt.Sprintf("error fetching STS config for account ID %q: {{err}}", accountID), err)
 	}
-	// An empty STS role signifies the master account
+	// An empty STS role signifies the main account
 	if sts != nil {
 		return sts.StsRole, nil
 	}

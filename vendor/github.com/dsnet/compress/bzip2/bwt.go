@@ -16,7 +16,7 @@ import "github.com/dsnet/compress/bzip2/internal/sais"
 //
 // References:
 //	http://www.hpl.hp.com/techreports/Compaq-DEC/SRC-RR-124.pdf
-//	https://github.com/cscott/compressjs/blob/master/lib/BWT.js
+//	https://github.com/cscott/compressjs/blob/main/lib/BWT.js
 //	https://www.quora.com/How-can-I-optimize-burrows-wheeler-transform-and-inverse-transform-to-work-in-O-n-time-O-n-space
 type burrowsWheelerTransform struct {
 	buf  []byte

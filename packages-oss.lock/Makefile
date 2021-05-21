@@ -246,8 +246,8 @@ define INVOKE_RELEASER_TARGET
 	( \
 		cd $(RELEASER_DIR); \
 		if [ $(RELEASER_PULL) = YES ]; then \
-			git checkout -q master; \
-			git pull -q origin master; \
+			git checkout -q main; \
+			git pull -q origin main; \
 			git clean -qf; \
 			git reset -q --hard HEAD; \
 		else \

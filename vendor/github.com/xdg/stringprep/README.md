@@ -1,5 +1,5 @@
 [![GoDoc](https://godoc.org/github.com/xdg/stringprep?status.svg)](https://godoc.org/github.com/xdg/stringprep)
-[![Build Status](https://travis-ci.org/xdg/stringprep.svg?branch=master)](https://travis-ci.org/xdg/stringprep)
+[![Build Status](https://travis-ci.org/xdg/stringprep.svg?branch=main)](https://travis-ci.org/xdg/stringprep)
 
 # stringprep – Go implementation of RFC-3454 stringprep and RFC-4013 SASLprep
 
